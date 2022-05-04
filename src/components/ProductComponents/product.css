@@ -101,9 +101,12 @@ h1{
 
   .hover-switch > img {
     position: absolute;
-    height: 25%;
+    height: 22%;
     width: 16%;
-    margin-bottom: 20px;
+  }
+
+  .text{
+      margin-top: 5%;
   }
 
 

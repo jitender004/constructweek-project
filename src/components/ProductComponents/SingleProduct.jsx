@@ -3,7 +3,7 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 import "./single.css";
-import ImagesGallery from "./ImagesGallery";
+import { Carousel } from "react-carousel-minimal";
 import ReactDOM from "react-dom";
 import "react-image-gallery/styles/css/image-gallery.css";
 // import { AuthContext } from "../context/AuthContext";
@@ -13,50 +13,55 @@ const SingleProduct = () => {
   const { id } = useParams();
   console.log("id", products, id);
 
-  const ImagesGallery = () => {
-    const dataProducts = useSelector((store) => store.products.products);
-    const imag = [];
-    dataProducts.map((e) => {
-      if (e.id == id) {
-        let i1 = e.img1;
-        imag.push(i1);
-        let i2 = e.img1;
-        imag.push(i2);
-        let i3 = e.img1;
-        imag.push(i3);
-      }
-    });
-    console.log(imag, "imag");
-    const [images, setImages] = React.useState(null);
-
-    React.useEffect(() => {
-      let shouldCancel = false;
-
-      const call = () => {
-        if (!imag && imag.data.length > 0) {
-          setImages(
-            imag.map((url) => ({
-              original: `${url}=w1024`,
-              thumbnail: `${url}=w100`,
-            }))
-          );
-        }
-      };
-      call();
-      return () => (shouldCancel = true);
-    }, []);
-
-    //  return images ? <ImageGallery items={images} /> : null;
-  };
-
   return (
     <div>
       {products.map((e) =>
         e.id == id ? (
           <div className="onepro">
             <div className="forimg">
-              {images ? <ImageGallery items={images} /> : null}
-              {/* <ImagesGallery />  */}
+              <div style={{ textAlign: "center" }}>
+                <div
+                  style={{
+                    padding: "0 20px",
+                  }}
+                >
+                  <Carousel
+                    data={[
+                      {
+                        image: `${e.img1}`,
+                      },
+                      {
+                        image: `${e.img2}`,
+                      },
+                      {
+                        image: `${e.img3}`,
+                      },
+                    ]}
+                    time={4000}
+                    width="900px"
+                    height="400px"
+                    // captionStyle={captionStyle}
+                    radius="10px"
+                    slideNumber={true}
+                    // slideNumberStyle={slideNumberStyle}
+                    captionPosition="bottom"
+                    automatic={true}
+                    dots={true}
+                    pauseIconColor="white"
+                    pauseIconSize="40px"
+                    slideBackgroundColor="darkgrey"
+                    slideImageFit="cover"
+                    thumbnails={true}
+                    thumbnailWidth="100px"
+                    style={{
+                      textAlign: "center",
+                      maxWidth: "850px",
+                      maxHeight: "500px",
+                      margin: "10px auto",
+                    }}
+                  />
+                </div>
+              </div>
             </div>
             <div className="forinfo">
               <p className="ow">{e.owner}</p>
@@ -85,12 +90,3 @@ const SingleProduct = () => {
 };
 
 export default SingleProduct;
-{
-  /* <div>
-  {data.map((record) => (
-    record.list.length > 0
-      ? (<YourRenderComponent record={record} key={record.id} />)
-      : null
-  ))}
-</div> */
-}

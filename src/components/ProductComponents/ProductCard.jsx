@@ -1,4 +1,3 @@
-
 import "./product.css";
 import { Link } from "react-router-dom";
 
@@ -27,16 +26,22 @@ const ProductCard = ({
               <img src={img1} />
               {/* <img src={e.img3} /> */}
             </a>
-          </div>
-          <img src={img3} style={{ height: "5%" }} alt="" />
 
-          <p className="owner">{owner}</p>
-          <h3 className="tit">{title}</h3>
-          <div className="flex">
-            <p className="price">${price}</p>
-            <p className="dis_price">${discounted_price}</p> 
-            <p className="save">Save {saveupto}%</p>
-        
+            <img
+              src={img3}
+              style={{ height: "5%", width: "90%", marginLeft: "1%" }}
+              alt=""
+            />
+          </div>
+          <div className="text">
+            {" "}
+            <p className="owner">{owner}</p>
+            <h3 className="tit">{title}</h3>
+            <div className="flex">
+              <p className="price">${price}</p>
+              <p className="dis_price">${discounted_price}</p>
+              <p className="save">Save {saveupto}%</p>
+            </div>
           </div>
         </div>
       </Link>
