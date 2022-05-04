@@ -32,8 +32,16 @@ const Productcomp = () => {
     setpro(dataProducts);
     setResults(dataProducts.length);
     getData();
-  }, []);
+  }, [pro]);
   console.log("Productsss", pro);
+
+  const getData = () => {
+    axios.get("http://localhost:8080/jewelry-watches").then((res) => {
+      //   setProducts(res.data);
+      dispatch(addProduct(res.data));
+      //   console.log("update 2", res.data);
+    });
+  };
 
   const sorting = (x) => {
     if (x.target.value === "PRICEHL") {
@@ -45,19 +53,13 @@ const Productcomp = () => {
         ...prev.sort((a, b) => a.discounted_price - b.discounted_price),
       ]);
     } else if (x.target.value === "TITLE-A-Z") {
-      setpro((prev) => [...prev.sort((a, b) => a.title > b.title)]);
+      setpro((prev) => [...prev.sort((a, b) => (a.title > b.title ? 1 : -1))]);
     } else if (x.target.value === "TITLE-Z-A") {
-      setpro((prev) => [...prev.sort((a, b) => a.title < b.title)]);
+      setpro((prev) => [...prev.sort((a, b) => (b.title > a.title ? 1 : -1))]);
+    } else {
+      setpro(pro);
     }
     console.log(pro, "filt");
-  };
-
-  const getData = () => {
-    axios.get("http://localhost:8080/jewelry-watches").then((res) => {
-      //   setProducts(res.data);
-      dispatch(addProduct(res.data));
-      //   console.log("update 2", res.data);
-    });
   };
 
   // const products = storedProducts.map((pro) => <ProductCard key={pro.id} />);

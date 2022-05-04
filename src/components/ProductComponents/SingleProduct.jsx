@@ -55,7 +55,8 @@ const SingleProduct = () => {
         e.id == id ? (
           <div className="onepro">
             <div className="forimg">
-             {/* <ImageGallery />  */}
+              {images ? <ImageGallery items={images} /> : null}
+              {/* <ImagesGallery />  */}
             </div>
             <div className="forinfo">
               <p className="ow">{e.owner}</p>
