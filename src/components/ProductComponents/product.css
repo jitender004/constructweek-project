@@ -54,6 +54,7 @@
     font-weight: 400;
     color: #ff4e4e;
     white-space: nowrap;
+    width: 40%;
 }
 
 .dis_price,.price{

@@ -187,5 +187,3 @@ const Productcomp = () => {
 };
 
 export default Productcomp;
-
-//{storedProducts.map((pro) => <ProductCard key={pro.id} />)}
