@@ -10,8 +10,8 @@
 
 .card{
     padding: 10%;
-    margin-bottom: 20px;
-    border: 1px solid rgb(251, 245, 245);
+    height: 380px;
+    border: 1px solid rgb(248, 245, 245);
 }
 
 .splitmainpage{
@@ -20,7 +20,7 @@
 }
 
 .filter{
-    border: 1px solid rgb(155, 152, 155);
+    border: 1px solid rgb(225, 216, 225);
     width: 40%;
 }
 
@@ -70,14 +70,13 @@ text-decoration: line-through;
 }
 
 h1{ 
-    font-size: 40px;
     font-family: Tiemann,serif;
     font-weight: 400;
 }
 
 .sec{
     margin-bottom: 2%;
-    margin-top: 10%;
+    margin-top: 1%;
     width: auto;
     display: flex;
     justify-content:space-between;
@@ -93,17 +92,18 @@ h1{
     -moz-transition: opacity 0.5s ease-in-out;
     -webkit-transition: opacity 0.5s ease-in-out;
   }
-  /* 
-   * Hide the last image on hover
-  */
+
   .hover-switch:hover > img:last-of-type {
     opacity: 0;
   }
 
-  .hover-switch >img {
-      text-align: center;
-      justify-content: center;
 
+  .hover-switch > img {
+    position: absolute;
+    height: 25%;
+    width: 16%;
+    margin-bottom: 20px;
   }
-  
+
+
   
