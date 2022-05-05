@@ -19,10 +19,16 @@ import { Select } from "@chakra-ui/react";
 
 const Productcomp = () => {
   const dataProducts = useSelector((store) => store.products.products);
-  // console.log("Productsss", dataProducts);
   const [pro, setpro] = useState(dataProducts);
   let [results, setResults] = useState(0);
   const [currentPage, setCurrentPage] = useState(1);
+
+
+    //catagory checkbox state
+    let [priceState1, setPriceState1] = useState(false)
+    let [priceState2, setPriceState2] = useState(false)
+    let [priceState3, setPriceState3] = useState(false)
+    let [priceState4, setPriceState4] = useState(false)
 
   const dispatch = useDispatch();
   const postPerPage = 3;
@@ -33,8 +39,18 @@ const Productcomp = () => {
     setResults(dataProducts.length);
     getData();
   }, []);
-  console.log("Productsss", pro);
 
+
+  const getData = () => {
+    axios.get("http://localhost:8080/jewelry-watches").then((res) => {
+      //   setProducts(res.data);
+      dispatch(addProduct(res.data));
+      //   console.log("update 2", res.data);
+    });
+  };
+
+  // console.log("Productsss", pro);
+///////////////// SORTING /////////////
   const sorting = (x) => {
     if (x.target.value === "PRICEHL") {
       setpro((prev) => [
@@ -52,13 +68,33 @@ const Productcomp = () => {
     console.log(pro, "filt");
   };
 
-  const getData = () => {
-    axios.get("http://localhost:8080/jewelry-watches").then((res) => {
-      //   setProducts(res.data);
-      dispatch(addProduct(res.data));
-      //   console.log("update 2", res.data);
-    });
-  };
+/////////////filter//////////////////
+
+const catagSort = (x)=>{
+  if(x == "watches"){
+    setPriceState1(!priceState1);
+    setpro(dataProducts.filter((a)=>a.type == "watches"));
+    setResults(dataProducts.filter((a)=>a.type == "watches").length);
+    console.log(pro,"w")
+  }
+  else if(x == "ring"){
+      setPriceState2(!priceState2);
+      setpro(dataProducts.filter((a)=>a.type == "ring"));
+    setResults(dataProducts.filter((a)=>a.type == "ring").length);
+    console.log(pro,"ring")
+  }
+  else if(x === "earrings"){
+      setPriceState3(!priceState3);
+      setpro(dataProducts.filter((a)=>a.type == "earrings"));
+      setResults(dataProducts.filter((a)=>a.type== "earrings").length);
+  }
+  else{
+      setPriceState4(!priceState4);
+      setpro(dataProducts.filter((a)=>a.type == "neck"));
+      setResults(dataProducts.filter((a)=>a.type == "neck").length);
+  }
+}
+
 
   // const products = storedProducts.map((pro) => <ProductCard key={pro.id} />);
 
@@ -98,9 +134,11 @@ const Productcomp = () => {
                     </AccordionButton>
                   </h2>
                   <AccordionPanel pb={4} textAlign="left">
-                    <Checkbox value="BESTSELLING">Watches</Checkbox>
+                    <Checkbox value="watches" checked={priceState1} onChange={() => {catagSort("watches")}}>Watches</Checkbox>
                     <br />
-                    <Checkbox value="BESTSELLING">Jewelry</Checkbox>
+                    <Checkbox value="ring" checked={priceState2}onChange={() => {catagSort("ring")}}>Ring</Checkbox>
+                    <br />
+                    <Checkbox value="earrings" checked={priceState3}onChange={() => {catagSort("earrings")}}>Earrings</Checkbox>
                   </AccordionPanel>
                 </AccordionItem>
 
