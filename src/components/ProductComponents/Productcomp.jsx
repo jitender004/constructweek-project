@@ -8,6 +8,7 @@ import {
   AccordionPanel,
   AccordionIcon,
   Box,
+  Button,
 } from "@chakra-ui/react";
 import { useState, useEffect } from "react";
 import axios from "axios";
@@ -23,12 +24,24 @@ const Productcomp = () => {
   let [results, setResults] = useState(0);
   const [currentPage, setCurrentPage] = useState(1);
 
+  //catagory checkbox state
+  let [priceState1, setPriceState1] = useState(false);
+  let [priceState2, setPriceState2] = useState(false);
+  let [priceState3, setPriceState3] = useState(false);
+  let [priceState4, setPriceState4] = useState(false);
 
-    //catagory checkbox state
-    let [priceState1, setPriceState1] = useState(false)
-    let [priceState2, setPriceState2] = useState(false)
-    let [priceState3, setPriceState3] = useState(false)
-    let [priceState4, setPriceState4] = useState(false)
+  let [priceState5, setPriceState5] = useState(false);
+  let [priceState6, setPriceState6] = useState(false);
+  let [priceState7, setPriceState7] = useState(false);
+  let [priceState8, setPriceState8] = useState(false);
+  let [priceState9, setPriceState9] = useState(false);
+  let [priceState10, setPriceState10] = useState(false);
+  let [priceState11, setPriceState11] = useState(false);
+
+  let [priceState12, setPriceState12] = useState(false);
+  let [priceState13, setPriceState13] = useState(false);
+  let [priceState14, setPriceState14] = useState(false);
+  let [priceState15, setPriceState15] = useState(false);
 
   const dispatch = useDispatch();
   const postPerPage = 3;
@@ -40,7 +53,6 @@ const Productcomp = () => {
     getData();
   }, []);
 
-
   const getData = () => {
     axios.get("http://localhost:8080/jewelry-watches").then((res) => {
       //   setProducts(res.data);
@@ -50,7 +62,7 @@ const Productcomp = () => {
   };
 
   // console.log("Productsss", pro);
-///////////////// SORTING /////////////
+  ///////////////// SORTING /////////////
   const sorting = (x) => {
     if (x.target.value === "PRICEHL") {
       setpro((prev) => [
@@ -64,37 +76,139 @@ const Productcomp = () => {
       setpro((prev) => [...prev.sort((a, b) => (a.title > b.title ? 1 : -1))]);
     } else if (x.target.value === "TITLE-Z-A") {
       setpro((prev) => [...prev.sort((a, b) => (b.title > a.title ? 1 : -1))]);
+    } else {
+      setpro(dataProducts);
     }
     console.log(pro, "filt");
   };
 
-/////////////filter//////////////////
+  /////////////filter//////////////////
 
-const catagSort = (x)=>{
-  if(x == "watches"){
-    setPriceState1(!priceState1);
-    setpro(dataProducts.filter((a)=>a.type == "watches"));
-    setResults(dataProducts.filter((a)=>a.type == "watches").length);
-    console.log(pro,"w")
-  }
-  else if(x == "ring"){
+  const catagSort = (x) => {
+    if (x == "watch") {
+      setPriceState1(!priceState1);
+      setpro(dataProducts.filter((a) => a.type == "watch"));
+      setResults(dataProducts.filter((a) => a.type == "watch").length);
+      console.log(pro, "w");
+    } else if (x == "ring") {
       setPriceState2(!priceState2);
-      setpro(dataProducts.filter((a)=>a.type == "ring"));
-    setResults(dataProducts.filter((a)=>a.type == "ring").length);
-    console.log(pro,"ring")
-  }
-  else if(x === "earrings"){
-      setPriceState3(!priceState3);
-      setpro(dataProducts.filter((a)=>a.type == "earrings"));
-      setResults(dataProducts.filter((a)=>a.type== "earrings").length);
-  }
-  else{
+      setpro(dataProducts.filter((a) => a.type == "ring"));
+      setResults(dataProducts.filter((a) => a.type == "ring").length);
+      console.log(pro, "ring");
+    } else if (x === "earrings") {
+      setPriceState3(!11);
+      setpro(dataProducts.filter((a) => a.type == "earrings"));
+      setResults(dataProducts.filter((a) => a.type == "earrings").length);
+    } else {
       setPriceState4(!priceState4);
-      setpro(dataProducts.filter((a)=>a.type == "neck"));
-      setResults(dataProducts.filter((a)=>a.type == "neck").length);
-  }
-}
+      setpro(dataProducts.filter((a) => a.type == "necklace"));
+      setResults(dataProducts.filter((a) => a.type == "necklace").length);
+    }
+  };
 
+  /////////////BRAND//////////////////
+
+  const brandSort = (x) => {
+    if (x == "JEWELRY AFFAIRS") {
+      setPriceState6(!priceState6);
+      setpro(dataProducts.filter((a) => a.owner == "JEWELRY AFFAIRS"));
+      setResults(
+        dataProducts.filter((a) => a.owner == "JEWELRY AFFAIRS").length
+      );
+    } else if (x == "VERSACE") {
+      setPriceState7(!priceState7);
+      setpro(dataProducts.filter((a) => a.owner == "VERSACE"));
+      setResults(dataProducts.filter((a) => a.owner == "VERSACE").length);
+    } else if (x == "CARTIER") {
+      setPriceState8(!priceState8);
+      setpro(dataProducts.filter((a) => a.owner == "CARTIER"));
+      setResults(dataProducts.filter((a) => a.owner == "CARTIER").length);
+    } else if (x == "SALVATORE FERRAGAMO") {
+      setPriceState9(!priceState9);
+      setpro(dataProducts.filter((a) => a.owner == "SALVATORE FERRAGAMO"));
+      setResults(
+        dataProducts.filter((a) => a.owner == "SALVATORE FERRAGAMO").length
+      );
+    } else if (x == "ROLEX") {
+      setPriceState5(!priceState5);
+      setpro(dataProducts.filter((a) => a.owner == "ROLEX"));
+      setResults(dataProducts.filter((a) => a.owner == "ROLEX").length);
+    } else if (x == "PIERRE CARDIN") {
+      setPriceState10(!priceState10);
+      setpro(dataProducts.filter((a) => a.owner == "PIERRE CARDIN"));
+      setResults(dataProducts.filter((a) => a.owner == "PIERRE CARDIN").length);
+    } else if (x == "PALMBEACH JEWELRY") {
+      setPriceState11(!priceState11);
+      setpro(dataProducts.filter((a) => a.owner == "PALMBEACH JEWELRY"));
+      setResults(
+        dataProducts.filter((a) => a.owner == "PALMBEACH JEWELRY").length
+      );
+    }
+    // else {
+    //   setPriceState4(!priceState4);
+    //   setpro(dataProducts.filter((a) => a.type == "neck"));
+    //   setResults(dataProducts.filter((a) => a.type == "neck").length);
+    // }
+  };
+
+  /////////PRICE////////
+  const priceSort = (x) => {
+    if (x == "99") {
+      setPriceState12(!priceState12);
+      setpro(dataProducts.filter((a) => a.discounted_price <= 99));
+      setResults(dataProducts.filter((a) => a.discounted_price <= 99).length);
+    } else if (x == "999") {
+      setPriceState13(!priceState13);
+      setpro(
+        dataProducts.filter(
+          (a) => a.discounted_price > 99 && a.discounted_price <= 999
+        )
+      );
+      setResults(
+        dataProducts.filter(
+          (a) => a.discounted_price > 99 && a.discounted_price <= 999
+        ).length
+      );
+    } else if (x == "1999") {
+      setPriceState14(!priceState14);
+      setpro(
+        dataProducts.filter(
+          (a) => a.discounted_price > 999 && a.discounted_price <= 1999
+        )
+      );
+      setResults(
+        dataProducts.filter(
+          (a) => a.discounted_price > 999 && a.discounted_price <= 1999
+        ).length
+      );
+    } else {
+      setPriceState15(!priceState15);
+      setpro(dataProducts.filter((a) => a.discounted_price > 2000));
+      setResults(dataProducts.filter((a) => a.discounted_price > 2000).length);
+    }
+  };
+
+  const resetfilter = () => {
+    setpro(dataProducts);
+    setResults(dataProducts.length);
+    setPriceState1(false);
+    setPriceState2(false);
+    setPriceState3(false);
+    setPriceState4(false);
+
+    setPriceState5(false);
+    setPriceState6(false);
+    setPriceState7(false);
+    setPriceState8(false);
+    setPriceState9(false);
+    setPriceState10(false);
+    setPriceState11(false);
+
+    setPriceState12(false);
+    setPriceState13(false);
+    setPriceState14(false);
+    setPriceState15(false);
+  };
 
   // const products = storedProducts.map((pro) => <ProductCard key={pro.id} />);
 
@@ -107,6 +221,7 @@ const catagSort = (x)=>{
           <div>
             <h3>{`Showing ${results} results for "Women's Bracelets"`}</h3>
           </div>
+
           <div className="sorting">
             <Select width="200px" onChange={sorting}>
               <option value="BESTSELLING">BESTSELLING</option>
@@ -120,11 +235,20 @@ const catagSort = (x)=>{
 
         <div className="splitmainpage">
           <div className="filter">
-            <div className="sorting" height="auto">
+            <div height="auto" style={{ width: "250px" }}>
               {/* // filter accouring to brand */}
               <Accordion defaultIndex={[0]} allowMultiple>
                 {/* // filter accouring to BESTSELLING */}
                 <AccordionItem>
+                  <Button
+                    colorScheme="teal"
+                    variant="ghost"
+                    onClick={() => {
+                      resetfilter();
+                    }}
+                  >
+                    Reset Filters
+                  </Button>
                   <h2>
                     <AccordionButton>
                       <Box flex="1" textAlign="left">
@@ -134,11 +258,45 @@ const catagSort = (x)=>{
                     </AccordionButton>
                   </h2>
                   <AccordionPanel pb={4} textAlign="left">
-                    <Checkbox value="watches" checked={priceState1} onChange={() => {catagSort("watches")}}>Watches</Checkbox>
+                    <Checkbox
+                      value="watch"
+                      checked={priceState1}
+                      onChange={() => {
+                        catagSort("watch");
+                      }}
+                    >
+                      Watches
+                    </Checkbox>
                     <br />
-                    <Checkbox value="ring" checked={priceState2}onChange={() => {catagSort("ring")}}>Ring</Checkbox>
+                    <Checkbox
+                      value="ring"
+                      checked={priceState2}
+                      onChange={() => {
+                        catagSort("ring");
+                      }}
+                    >
+                      Ring
+                    </Checkbox>
                     <br />
-                    <Checkbox value="earrings" checked={priceState3}onChange={() => {catagSort("earrings")}}>Earrings</Checkbox>
+                    <Checkbox
+                      value="earrings"
+                      checked={priceState3}
+                      onChange={() => {
+                        catagSort("earrings");
+                      }}
+                    >
+                      Earrings
+                    </Checkbox>
+                    <br></br>
+                    <Checkbox
+                      value="necklace"
+                      checked={priceState3}
+                      onChange={() => {
+                        catagSort("necklace");
+                      }}
+                    >
+                      Necklace
+                    </Checkbox>
                   </AccordionPanel>
                 </AccordionItem>
 
@@ -152,11 +310,75 @@ const catagSort = (x)=>{
                     </AccordionButton>
                   </h2>
                   <AccordionPanel pb={4} textAlign="left">
-                    <Checkbox value="BESTSELLING">Chloe</Checkbox>
+                    <Checkbox
+                      value="ROLEX"
+                      checked={priceState5}
+                      onChange={() => {
+                        brandSort("ROLEX");
+                      }}
+                    >
+                      ROLEX
+                    </Checkbox>
                     <br />
-                    <Checkbox value="BESTSELLING">Gucci</Checkbox>
+                    <Checkbox
+                      value="JEWELRY AFFAIRS"
+                      checked={priceState6}
+                      onChange={() => {
+                        brandSort("ROLEX");
+                      }}
+                    >
+                      JEWELRY AFFAIRS
+                    </Checkbox>
                     <br />
-                    <Checkbox value="BESTSELLING">Gucci</Checkbox>
+                    <Checkbox
+                      value="VERSACE"
+                      checked={priceState7}
+                      onChange={() => {
+                        brandSort("VERSACE");
+                      }}
+                    >
+                      VERSACE
+                    </Checkbox>
+                    <br />
+                    <Checkbox
+                      value="CARTIER"
+                      checked={priceState8}
+                      onChange={() => {
+                        brandSort("CARTIER");
+                      }}
+                    >
+                      CARTIER
+                    </Checkbox>
+                    <br />
+                    <Checkbox
+                      value="SALVATORE FERRAGAMO"
+                      checked={priceState9}
+                      onChange={() => {
+                        brandSort("SALVATORE FERRAGAMO");
+                      }}
+                    >
+                      SALVATORE FERRAGAMO
+                    </Checkbox>
+                    <br />
+                    <Checkbox
+                      value="PIERRE CARDIN"
+                      checked={priceState10}
+                      onChange={() => {
+                        brandSort("PIERRE CARDIN");
+                      }}
+                    >
+                      PIERRE CARDIN
+                    </Checkbox>
+                    <br />
+                    <Checkbox
+                      value="PALMBEACH JEWELRY"
+                      checked={priceState11}
+                      onChange={() => {
+                        brandSort("PALMBEACH JEWELRY");
+                      }}
+                    >
+                      PALMBEACH JEWELRY
+                    </Checkbox>
                     <br />
                   </AccordionPanel>
                 </AccordionItem>
@@ -173,11 +395,45 @@ const catagSort = (x)=>{
                     </AccordionButton>
                   </h2>
                   <AccordionPanel pb={4} textAlign="left">
-                    <Checkbox value="low">From $100-$499</Checkbox>
+                    <Checkbox
+                      checked={priceState12}
+                      onChange={() => {
+                        priceSort("99");
+                      }}
+                      value="99"
+                    >
+                      Below $99
+                    </Checkbox>
                     <br />
-                    <Checkbox value="mig">From $500-$999</Checkbox>
+                    <Checkbox
+                      checked={priceState13}
+                      onChange={() => {
+                        priceSort("999");
+                      }}
+                      value="999"
+                    >
+                      From $100 - $999
+                    </Checkbox>
                     <br />
-                    <Checkbox value="high">Above 1000</Checkbox>
+                    <Checkbox
+                      checked={priceState14}
+                      onChange={() => {
+                        priceSort("1999");
+                      }}
+                      value="1999"
+                    >
+                      From $1000 - $1999
+                    </Checkbox>
+                    <br />
+                    <Checkbox
+                      checked={priceState15}
+                      onChange={() => {
+                        priceSort("2000");
+                      }}
+                      value="2000"
+                    >
+                      Above 2000
+                    </Checkbox>
                     <br />
                   </AccordionPanel>
                 </AccordionItem>

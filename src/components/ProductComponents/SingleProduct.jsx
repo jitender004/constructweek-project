@@ -4,9 +4,7 @@ import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 import "./single.css";
 import { Carousel } from "react-carousel-minimal";
-import ReactDOM from "react-dom";
 import "react-image-gallery/styles/css/image-gallery.css";
-// import { AuthContext } from "../context/AuthContext";
 
 const SingleProduct = () => {
   const products = useSelector((store) => store.products.products);
@@ -37,7 +35,7 @@ const SingleProduct = () => {
                         image: `${e.img3}`,
                       },
                     ]}
-                    time={4000}
+                    time={3000}
                     width="900px"
                     height="400px"
                     // captionStyle={captionStyle}
@@ -73,6 +71,31 @@ const SingleProduct = () => {
               </div>
               <p>FREE SHIPPING ON ORDERS OVER $99</p>
               <hr style={{ marginTop: "30px" }} />
+
+              {e.size ? (
+                <div>
+                  <p>SIZE</p>
+                  <div
+                    style={{
+                      display: "flex",
+                    }}
+                  >
+                    {e.size.map((w) => (
+                      <p
+                        style={{
+                          border: "1px solid gray",
+                          width: "45px",
+                          padding: "7px 12px",
+                          margin: "5px",
+                        }}
+                      >
+                        {w}
+                      </p>
+                    ))}
+                  </div>
+                </div>
+              ) : null}
+
               <button className="black">ADD TO CART</button>
               <p>Usually ships in 1 to 2 business days</p>
               <br />

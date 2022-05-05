@@ -5,7 +5,7 @@
 
 .product{
     /* border: 1px solid rgb(149, 25, 25); */
-    width: 100%;
+    width: 90%;
 }
 
 .card{
@@ -20,8 +20,12 @@
 }
 
 .filter{
+
     border: 1px solid rgb(225, 216, 225);
-    width: 40%;
+    height: max-content;
+}
+.filter > div {
+    width: 200px;
 }
 
 .owner{
@@ -83,9 +87,7 @@ h1{
     justify-content:space-between;
 }
 
-.filter{
-    height: max-content;
-}
+
 
 .hover-switch > img:last-of-type {
     opacity: 1;
@@ -101,12 +103,26 @@ h1{
 
   .hover-switch > img {
     position: absolute;
-    height: 22%;
-    width: 16%;
+    height: 180px;
+    width: 15%;
+    /* border: 1px solid rgb(161, 26, 26); */
   }
 
   .text{
       margin-top: 5%;
+  }
+
+  .x{
+      /* border: 1px solid gray; */
+      padding: 1%;
+  }
+
+  .x > img{
+    /* border: 1px solid rgb(12, 46, 156); */
+    height: 180px;
+    width: 90%;
+    margin-left: 1%;
+    margin-bottom: 5%;
   }
 
 
