@@ -1,6 +1,7 @@
 .mainbody{
     padding-left:10% ;
     padding-right:10% ;
+   
 }
 
 .product{
@@ -9,13 +10,16 @@
 }
 
 .card{
-    padding: 10%;
-    height: 380px;
-    border: 1px solid rgb(248, 245, 245);
+    padding: 5%;
+    height:330px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    border: 1px solid rgb(242, 234, 234);
 }
 
 .splitmainpage{
     display: flex;
+    /* border: 1px solid rgb(12, 193, 154); */
 }
 
 .filter{
@@ -106,9 +110,9 @@ h1{
     /* border: 1px solid rgb(161, 26, 26); */
   }
 
-  .text{
+  /* .text{
       margin-bottom: 5%;
-  }
+  } */
 
   .x{
       /* border: 1px solid gray; */
@@ -151,8 +155,11 @@ h1{
     border: 0 solid transparent;
 }
 
-.SimpleGrid{
-    columns:3;
+.simple{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    overflow-x: auto;
+    overflow-y: hidden;
 }
 .az{
     height:auto;
@@ -161,44 +168,47 @@ h1{
 
 @media only screen and (min-width:321px) and (max-width:720px)
 {
-    .SimpleGrid{
-        columns:1;
+    .simple{
+        grid-template-columns: repeat(2,1fr);
     }
-    .az{
+    /* .az{
          width: 100px
     }
     .x > img{
         display: none;
       }
+    
+          a > img {
+     display: block;
+     margin-left: -4%;
+    } 
+
+      */
     .filter > div {
         width: 200px;
     } 
 
-    a > img {
-     display: block;
-     margin-left: -4%;
-    }
-     
+
     .x img {
-        margin-top: 40%;
+        margin-top: 0%;
         width: 15%;
         height: 100px;
         margin-bottom: 20%;
       }
       
-    .card{
+    /* .card{
           height: 250px;
           display: flex;
       }
     .text{
         margin-left: 35%;
-      }
+      } */
 
 }
 
 @media only screen and (min-width:0px) and (max-width:320px){
-    .SimpleGrid{
-        columns:1
+    .simple{
+        grid-template-columns: repeat(1,1fr);
     }
     .az{
         width: 150px
@@ -225,8 +235,8 @@ h1{
   }
 
   .card > .text{
-    margin-top: 100%;
-  }
+    margin-top: 100%; 
+}
 
 
 }

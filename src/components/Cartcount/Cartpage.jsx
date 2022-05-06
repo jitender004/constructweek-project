@@ -50,7 +50,7 @@ export function Cartpage(isOpen, onOpen, onClose, setsidebar, sidebar) {
 
   const getCartData = async () => {
     const data = await axios
-      .get("http://localhost:8080/jewelry-watches")
+      .get("https://bluefly-api.herokuapp.com/product")
       .then((res) => {
         setItems(res.data);
       });

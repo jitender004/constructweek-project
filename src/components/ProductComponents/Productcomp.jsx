@@ -57,7 +57,8 @@ const Productcomp = () => {
   }, []);
 
   const getData = () => {
-    axios.get("http://localhost:8080/jewelry-watches").then((res) => {
+    axios.get("https://bluefly-api.herokuapp.com/product").then((res) => {
+      // axios.get("http://localhost:8080/jewelry-watches").then((res) => {
       dispatch(addProduct(res.data));
       setpro(res.data);
       setResults(res.data.length);
@@ -444,7 +445,7 @@ const Productcomp = () => {
           </div>
           {/* -------------------------product ---------------------*/}
           <div>
-            <div className="SimpleGrid"
+            <div className="simple"
             >
               {prod &&
                 prod.map((el) => (

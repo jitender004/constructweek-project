@@ -23,7 +23,7 @@ const SingleProduct = () => {
   };
 
   const getData = () => {
-    axios.get("http://localhost:8080/jewelry-watches").then((res) => {
+    axios.get("https://bluefly-api.herokuapp.com/product").then((res) => {
       //   setProducts(res.data);
       setpro(res.data);
     });
