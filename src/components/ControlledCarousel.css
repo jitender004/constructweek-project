@@ -1,0 +1,10 @@
+.img{
+    width: fit-content;
+}
+button{
+    border: none;
+    background-color: rgb(255, 255, 255);
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 20px;
+}
