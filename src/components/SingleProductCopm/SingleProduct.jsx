@@ -1,19 +1,38 @@
-import React from "react";
+import "react-image-gallery/styles/css/image-gallery.css";
+import { Carousel } from "react-carousel-minimal";
 // import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useState, useEffect } from "react";
+import axios from "axios";
+import React from "react";
 import "./single.css";
-import { Carousel } from "react-carousel-minimal";
-import "react-image-gallery/styles/css/image-gallery.css";
+import { Cartpage } from "../Cartcount/Cartpage";
+import { useDisclosure } from "@chakra-ui/react";
 
 const SingleProduct = () => {
-  const products = useSelector((store) => store.products.products);
+  const [pro, setpro] = useState([]);
+  const [side, setsidebar] = useState(false);
   const { id } = useParams();
-  console.log("id", products, id);
+  // console.log("id", pro, id);
 
+  useEffect(() => {
+    getData();
+  }, []);
+  const displayside = () => {
+    setsidebar(true);
+  };
+
+  const getData = () => {
+    axios.get("http://localhost:8080/jewelry-watches").then((res) => {
+      //   setProducts(res.data);
+      setpro(res.data);
+    });
+  };
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const [placement, setPlacement] = React.useState("right");
   return (
     <div>
-      {products.map((e) =>
+      {pro.map((e) =>
         e.id == id ? (
           <div className="onepro">
             <div className="forimg">
@@ -95,8 +114,10 @@ const SingleProduct = () => {
                   </div>
                 </div>
               ) : null}
+              <button onClick={() => displayside()} className="black">
+                ADD TO CART
+              </button>
 
-              <button className="black">ADD TO CART</button>
               <p>Usually ships in 1 to 2 business days</p>
               <br />
               <p>{e.des}</p>
@@ -108,6 +129,9 @@ const SingleProduct = () => {
           </div>
         ) : null
       )}
+      {side ? (
+        <Cartpage isOpen={isOpen} onOpe={onOpen} onClose={onClose} />
+      ) : null}
     </div>
   );
 };

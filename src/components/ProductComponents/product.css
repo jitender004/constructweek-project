@@ -125,5 +125,34 @@ h1{
     margin-bottom: 5%;
   }
 
+  .pagination{
+      justify-content: center;
+      /* margin-left: 30%; */
+    display: flex;
+    padding-left: 0;
+    list-style: none;
+    border-radius: 0.25rem;
+    margin-top: 20px;
+  }
+
+  .page-item.active .page-link {
+    z-index: 3;
+    color: #fff;
+    background-color: #000000;
+    border-color: transparent;
+}
+
+.page-link {
+    position: relative;
+    display: block;
+    padding: 0.5rem 0.75rem;
+    margin-left: 0;
+    line-height: 1.25;
+    color: #fff;
+    background-color: #444343;
+    border: 0 solid transparent;
+}
+
+
 
   

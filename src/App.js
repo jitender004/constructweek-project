@@ -3,7 +3,7 @@ import './App.css';
 import Productcomp from './components/ProductComponents/Productcomp';
 import { Route, Routes } from "react-router-dom";
 import Home from "./components/ProductComponents/Home";
-import Singletodo from './components/ProductComponents/SingleProduct';
+import Singletodo from './components/SingleProductCopm/SingleProduct';
 
 function App() {
   return (
@@ -12,6 +12,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />}></Route>
           <Route path="/product" element={<Productcomp />}></Route>
+
           <Route path="/product/:id" element={<Singletodo />}></Route>
         </Routes>
       </div>

@@ -1,6 +1,7 @@
 import "./product.css";
 import { Link } from "react-router-dom";
 
+
 const ProductCard = ({
   id,
   img1,
@@ -26,11 +27,7 @@ const ProductCard = ({
               <img src={img1} />
               {/* <img src={e.img3} /> */}
             </a>
-            <img
-              src={img3}
-
-              alt=""
-            />
+            <img src={img3} alt="" />
           </div>
           <div className="text">
             <p className="owner">{owner}</p>

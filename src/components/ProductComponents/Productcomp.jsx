@@ -1,6 +1,11 @@
-import React from "react";
-import { SimpleGrid, Checkbox } from "@chakra-ui/react";
+import { addProduct } from "../../Redux/Product/ProductAction";
 import { useDispatch, useSelector } from "react-redux";
+import { useState, useEffect } from "react";
+import ProductCard from "./ProductCard";
+import Paginate from "./Paginate";
+import React from "react";
+import axios from "axios";
+import "./product.css";
 import {
   Accordion,
   AccordionItem,
@@ -9,21 +14,25 @@ import {
   AccordionIcon,
   Box,
   Button,
+  SimpleGrid,
+  Checkbox,
+  Select,
 } from "@chakra-ui/react";
-import { useState, useEffect } from "react";
-import axios from "axios";
-import { addProduct } from "../../Redux/Product/ProductAction";
-import ProductCard from "./ProductCard";
-import "./product.css";
-import Paginate from "./Paginate";
-import { Select } from "@chakra-ui/react";
 
 const Productcomp = () => {
   const dataProducts = useSelector((store) => store.products.products);
-  const [pro, setpro] = useState(dataProducts);
-  let [results, setResults] = useState(0);
+  // console.log(dataProducts, "a");
   const [currentPage, setCurrentPage] = useState(1);
+  const [pro, setpro] = useState(dataProducts);
+  const [results, setResults] = useState(0);
+  const dispatch = useDispatch();
+  const totalPosts = pro.length;
+  const postPerPage = 6;
 
+  const indexOfLastPost = currentPage * postPerPage;
+  const indexOfFirstPost = indexOfLastPost - postPerPage;
+  const prod = pro.slice(indexOfFirstPost, indexOfLastPost);
+  
   //catagory checkbox state
   let [priceState1, setPriceState1] = useState(false);
   let [priceState2, setPriceState2] = useState(false);
@@ -43,25 +52,18 @@ const Productcomp = () => {
   let [priceState14, setPriceState14] = useState(false);
   let [priceState15, setPriceState15] = useState(false);
 
-  const dispatch = useDispatch();
-  const postPerPage = 3;
-  const totalPosts = results.length;
-
   useEffect(() => {
-    setpro(dataProducts);
-    setResults(dataProducts.length);
     getData();
   }, []);
 
   const getData = () => {
     axios.get("http://localhost:8080/jewelry-watches").then((res) => {
-      //   setProducts(res.data);
       dispatch(addProduct(res.data));
-      //   console.log("update 2", res.data);
+      setpro(res.data);
+      setResults(res.data.length);
     });
   };
 
-  // console.log("Productsss", pro);
   ///////////////// SORTING /////////////
   const sorting = (x) => {
     if (x.target.value === "PRICEHL") {
@@ -86,12 +88,12 @@ const Productcomp = () => {
 
   const catagSort = (x) => {
     if (x == "watch") {
-      setPriceState1(!priceState1);
+      setPriceState1(true);
       setpro(dataProducts.filter((a) => a.type == "watch"));
       setResults(dataProducts.filter((a) => a.type == "watch").length);
       console.log(pro, "w");
     } else if (x == "ring") {
-      setPriceState2(!priceState2);
+      setPriceState2(true);
       setpro(dataProducts.filter((a) => a.type == "ring"));
       setResults(dataProducts.filter((a) => a.type == "ring").length);
       console.log(pro, "ring");
@@ -110,7 +112,7 @@ const Productcomp = () => {
 
   const brandSort = (x) => {
     if (x == "JEWELRY AFFAIRS") {
-      setPriceState6(!priceState6);
+      setPriceState6(true);
       setpro(dataProducts.filter((a) => a.owner == "JEWELRY AFFAIRS"));
       setResults(
         dataProducts.filter((a) => a.owner == "JEWELRY AFFAIRS").length
@@ -188,29 +190,8 @@ const Productcomp = () => {
     }
   };
 
-  const resetfilter = () => {
-    setpro(dataProducts);
-    setResults(dataProducts.length);
-    setPriceState1(false);
-    setPriceState2(false);
-    setPriceState3(false);
-    setPriceState4(false);
-
-    setPriceState5(false);
-    setPriceState6(false);
-    setPriceState7(false);
-    setPriceState8(false);
-    setPriceState9(false);
-    setPriceState10(false);
-    setPriceState11(false);
-
-    setPriceState12(false);
-    setPriceState13(false);
-    setPriceState14(false);
-    setPriceState15(false);
-  };
-
   // const products = storedProducts.map((pro) => <ProductCard key={pro.id} />);
+  if (pro.length === 0) return null;
 
   return (
     <div className="mainbody">
@@ -222,6 +203,7 @@ const Productcomp = () => {
             <h3>{`Showing ${results} results for "Women's Bracelets"`}</h3>
           </div>
 
+          {/* -------------------------sorting ---------------------*/}
           <div className="sorting">
             <Select width="200px" onChange={sorting}>
               <option value="BESTSELLING">BESTSELLING</option>
@@ -232,7 +214,7 @@ const Productcomp = () => {
             </Select>
           </div>
         </div>
-
+        {/* -------------------------filter ---------------------*/}
         <div className="splitmainpage">
           <div className="filter">
             <div height="auto" style={{ width: "250px" }}>
@@ -244,11 +226,30 @@ const Productcomp = () => {
                     colorScheme="teal"
                     variant="ghost"
                     onClick={() => {
-                      resetfilter();
+                      setpro(dataProducts);
+                      setResults(dataProducts.length);
+                      setPriceState1(false);
+                      setPriceState2(false);
+                      setPriceState3(false);
+                      setPriceState4(false);
+
+                      setPriceState5(false);
+                      setPriceState6(false);
+                      setPriceState7(false);
+                      setPriceState8(false);
+                      setPriceState9(false);
+                      setPriceState10(false);
+                      setPriceState11(false);
+
+                      setPriceState12(false);
+                      setPriceState13(false);
+                      setPriceState14(false);
+                      setPriceState15(false);
                     }}
                   >
                     Reset Filters
                   </Button>
+                  {/* -------------------------filter-catagory ---------------------*/}
                   <h2>
                     <AccordionButton>
                       <Box flex="1" textAlign="left">
@@ -299,7 +300,7 @@ const Productcomp = () => {
                     </Checkbox>
                   </AccordionPanel>
                 </AccordionItem>
-
+                {/* -------------------------filter-brand ---------------------*/}
                 <AccordionItem>
                   <h2>
                     <AccordionButton>
@@ -383,8 +384,7 @@ const Productcomp = () => {
                   </AccordionPanel>
                 </AccordionItem>
 
-                {/* // filter accouring to price */}
-
+                {/* -------------------------filter-price ---------------------*/}
                 <AccordionItem>
                   <h2>
                     <AccordionButton>
@@ -442,7 +442,7 @@ const Productcomp = () => {
               {/* <SliderThumbWithTooltip /> */}
             </div>
           </div>
-
+          {/* -------------------------product ---------------------*/}
           <div>
             <SimpleGrid
               className="product"
@@ -450,8 +450,8 @@ const Productcomp = () => {
               spacingX="20px"
               spacingY="20px"
             >
-              {pro &&
-                pro.map((el) => (
+              {prod &&
+                prod.map((el) => (
                   <ProductCard
                     key={el.id}
                     id={el.id}
@@ -468,6 +468,7 @@ const Productcomp = () => {
           </div>
         </div>
       </div>
+      {/* -------------------------pagination ---------------------*/}
       {totalPosts > postPerPage && (
         <Paginate
           currentPage={currentPage}

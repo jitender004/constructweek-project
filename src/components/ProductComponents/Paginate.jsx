@@ -1,4 +1,5 @@
 import React from "react";
+import "./product.css";
 
 const Paginate = ({ currentPage, setCurrentPage, totalPosts, postPerPage }) => {
   const totalPages = Math.ceil(totalPosts / postPerPage);
@@ -11,7 +12,7 @@ const Paginate = ({ currentPage, setCurrentPage, totalPosts, postPerPage }) => {
   console.log("page")
 
   return (
-    <ul className="pagination">
+    <ul className="pagination" >
       <li className={`page-item ${currentPage === 1 && `disabled`}`}>
         <button
           className="page-link"
