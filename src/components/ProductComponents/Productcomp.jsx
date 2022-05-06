@@ -217,7 +217,7 @@ const Productcomp = () => {
         {/* -------------------------filter ---------------------*/}
         <div className="splitmainpage">
           <div className="filter">
-            <div height="auto" style={{ width: "250px" }}>
+            <div  className="az">
               {/* // filter accouring to brand */}
               <Accordion defaultIndex={[0]} allowMultiple>
                 {/* // filter accouring to BESTSELLING */}
@@ -444,11 +444,7 @@ const Productcomp = () => {
           </div>
           {/* -------------------------product ---------------------*/}
           <div>
-            <SimpleGrid
-              className="product"
-              columns={3}
-              spacingX="20px"
-              spacingY="20px"
+            <div className="SimpleGrid"
             >
               {prod &&
                 prod.map((el) => (
@@ -464,13 +460,13 @@ const Productcomp = () => {
                     saveupto={el.saveupto}
                   />
                 ))}
-            </SimpleGrid>
+            </div>
           </div>
         </div>
       </div>
       {/* -------------------------pagination ---------------------*/}
       {totalPosts > postPerPage && (
-        <Paginate
+        <Paginate       
           currentPage={currentPage}
           setCurrentPage={setCurrentPage}
           totalPosts={totalPosts}

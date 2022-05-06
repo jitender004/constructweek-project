@@ -2,7 +2,7 @@
 import './App.css';
 import Productcomp from './components/ProductComponents/Productcomp';
 import { Route, Routes } from "react-router-dom";
-import Home from "./components/ProductComponents/Home";
+import Home from "./components/ProductComponents/DummyHome";
 import Singletodo from './components/SingleProductCopm/SingleProduct';
 
 function App() {

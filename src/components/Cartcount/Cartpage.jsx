@@ -4,7 +4,6 @@ import {
   DrawerHeader,
   DrawerOverlay,
   DrawerContent,
-  useDisclosure,
   Button,
   Text,
   Flex,
@@ -22,7 +21,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 
-export function Cartpage(isOpen, onOpen, onClose) {
+export function Cartpage(isOpen, onOpen, onClose, setsidebar, sidebar) {
   const [items, setItems] = useState([]);
   const [qty, setQty] = useState(1);
 
@@ -75,7 +74,8 @@ export function Cartpage(isOpen, onOpen, onClose) {
             </h1>
             <DrawerCloseButton
               onClick={() => {
-                // onClose;
+                window.location.reload();
+                // setsidebar(false);
               }}
               mt="4"
             />
@@ -94,11 +94,11 @@ export function Cartpage(isOpen, onOpen, onClose) {
                     <GridItem rowSpan={3} colSpan={3}>
                       <Image src={e.img1} />
                     </GridItem>
-                    <GridItem colSpan={9} h="5">
+                    <GridItem colSpan={9} style={{ margin: "10px" }}>
                       <Text>{e.title}</Text>
                     </GridItem>
-                    <GridItem colSpan={9}>
-                      <Text>size/color</Text>
+                    <GridItem colSpan={9} h="10">
+                      <Text>color - {e.color}</Text>
                     </GridItem>
                     <GridItem colStart={4}>
                       <Stack border="1px" direction="row">

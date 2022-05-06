@@ -29,7 +29,7 @@ const SingleProduct = () => {
     });
   };
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const [placement, setPlacement] = React.useState("right");
+
   return (
     <div>
       {pro.map((e) =>
@@ -88,6 +88,7 @@ const SingleProduct = () => {
                 <p className="dis_price">${e.discounted_price}</p>
                 <p className="save">Save {e.saveupto}%</p>
               </div>
+              <p>Color - {e.color}</p>
               <p>FREE SHIPPING ON ORDERS OVER $99</p>
               <hr style={{ marginTop: "30px" }} />
 
@@ -130,7 +131,7 @@ const SingleProduct = () => {
         ) : null
       )}
       {side ? (
-        <Cartpage isOpen={isOpen} onOpe={onOpen} onClose={onClose} />
+        <Cartpage isOpen={isOpen} onOpe={onOpen} onClose={onClose} setsidebar sidebar />
       ) : null}
     </div>
   );

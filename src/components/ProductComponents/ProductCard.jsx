@@ -27,7 +27,7 @@ const ProductCard = ({
               <img src={img1} />
               {/* <img src={e.img3} /> */}
             </a>
-            <img src={img3} alt="" />
+            <img  src={img3} alt="" />
           </div>
           <div className="text">
             <p className="owner">{owner}</p>

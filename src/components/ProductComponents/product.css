@@ -16,16 +16,14 @@
 
 .splitmainpage{
     display: flex;
-
 }
 
 .filter{
-
     border: 1px solid rgb(225, 216, 225);
     height: max-content;
 }
 .filter > div {
-    width: 200px;
+    width: 250px;
 }
 
 .owner{
@@ -109,7 +107,7 @@ h1{
   }
 
   .text{
-      margin-top: 5%;
+      margin-bottom: 5%;
   }
 
   .x{
@@ -117,12 +115,12 @@ h1{
       padding: 1%;
   }
 
-  .x > img{
-    /* border: 1px solid rgb(12, 46, 156); */
+  .x  img{
     height: 180px;
-    width: 90%;
-    margin-left: 1%;
+    width: 180px;
+    margin-left: 0%;
     margin-bottom: 5%;
+    /* border: 1px solid rgb(26, 51, 161); */
   }
 
   .pagination{
@@ -145,13 +143,96 @@ h1{
 .page-link {
     position: relative;
     display: block;
-    padding: 0.5rem 0.75rem;
+    padding: 0.5rem 0.9rem;
     margin-left: 0;
     line-height: 1.25;
     color: #fff;
     background-color: #444343;
     border: 0 solid transparent;
 }
+
+.SimpleGrid{
+    columns:3;
+}
+.az{
+    height:auto;
+     width: 250px
+}
+
+@media only screen and (min-width:321px) and (max-width:720px)
+{
+    .SimpleGrid{
+        columns:1;
+    }
+    .az{
+         width: 100px
+    }
+    .x > img{
+        display: none;
+      }
+    .filter > div {
+        width: 200px;
+    } 
+
+    a > img {
+     display: block;
+     margin-left: -4%;
+    }
+     
+    .x img {
+        margin-top: 40%;
+        width: 15%;
+        height: 100px;
+        margin-bottom: 20%;
+      }
+      
+    .card{
+          height: 250px;
+          display: flex;
+      }
+    .text{
+        margin-left: 35%;
+      }
+
+}
+
+@media only screen and (min-width:0px) and (max-width:320px){
+    .SimpleGrid{
+        columns:1
+    }
+    .az{
+        width: 150px
+   }
+   .splitmainpage{
+    display:block;
+}
+.x > img{
+    display: none;
+  }
+
+  .x img {
+    margin-top: 40%;
+    width: 50%;
+    height: 100px;
+    margin-bottom: 20%;
+  }
+ .card{
+        height: 250px;
+        display: block;
+  }
+  .x {
+    margin-top: 0%;
+  }
+
+  .card > .text{
+    margin-top: 100%;
+  }
+
+
+}
+
+
+
 
 
 
