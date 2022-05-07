@@ -450,8 +450,8 @@ const Productcomp = () => {
               {prod &&
                 prod.map((el) => (
                   <ProductCard
-                    key={el.id}
-                    id={el.id}
+                    key={el._id}
+                    id={el._id}
                     img1={el.img1}
                     img3={el.img3}
                     title={el.title}

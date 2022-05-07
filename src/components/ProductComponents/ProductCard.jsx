@@ -1,7 +1,6 @@
 import "./product.css";
 import { Link } from "react-router-dom";
 
-
 const ProductCard = ({
   id,
   img1,
@@ -12,7 +11,7 @@ const ProductCard = ({
   discounted_price,
   saveupto,
 }) => {
-  // console.log("uii");
+
   // const products = useSelector((store) => store.products.products);
   return (
     <div className="card">
@@ -27,7 +26,7 @@ const ProductCard = ({
               <img src={img1} />
               {/* <img src={e.img3} /> */}
             </a>
-            <img  src={img3} alt="" />
+            <img src={img3} alt="" />
           </div>
           <div className="text">
             <p className="owner">{owner}</p>

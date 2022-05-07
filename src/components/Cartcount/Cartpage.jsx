@@ -26,18 +26,19 @@ export function Cartpage(isOpen, onOpen, onClose, setsidebar, sidebar) {
   const [qty, setQty] = useState(1);
 
   const { id } = useParams();
+  console.log("id", items);
 
-  const updatecartqty = async (value, id) => {
-    const data = await axios.patch(
-      `https://bluefly-api.herokuapp.com/product/${id}`,
-      {
+  const updatecartqty = async (value) => {
+    const data = await axios
+      .patch(`https://bluefly-api.herokuapp.com/product/${id}`, {
         qty: value,
-      }
-    );
-    // .then((res) => {
-    //   getCartData();
-    // });
+      })
+      .then((res) => {
+        getCartData();
+      });
+    setQty(data);
     setQty(data.data.qty);
+    console.log(data.data, "a");
   };
 
   const handleQty = (value, id) => {
@@ -54,11 +55,10 @@ export function Cartpage(isOpen, onOpen, onClose, setsidebar, sidebar) {
 
   const getCartData = async () => {
     const data = await axios
-      .get("https://bluefly-api.herokuapp.com/product")
+      .get(`https://bluefly-api.herokuapp.com/product/${id}`)
       .then((res) => {
         setItems(res.data);
       });
-    console.log(data, "cartdata");
   };
 
   useEffect(() => {
@@ -85,64 +85,63 @@ export function Cartpage(isOpen, onOpen, onClose, setsidebar, sidebar) {
             />
           </DrawerHeader>
           <DrawerBody>
-            {items.map((e) => {
-              return e.id == id ? (
-                <Box mb="5">
-                  <Grid
-                    templateRows="auto"
-                    templateColumns="repeat(12,1fr)"
-                    gap={4}
-                    borderBottomWidth="2px"
-                    pb="5"
-                  >
-                    <GridItem rowSpan={3} colSpan={3}>
-                      <Image src={e.img1} />
-                    </GridItem>
-                    <GridItem colSpan={9} style={{ margin: "10px" }}>
-                      <Text>{e.title}</Text>
-                    </GridItem>
-                    <GridItem colSpan={9} h="10">
-                      <Text>color - {e.color}</Text>
-                    </GridItem>
-                    <GridItem colStart={4}>
-                      <Stack border="1px" direction="row">
-                        <Button
-                          borderRight="1px"
-                          borderRadius="none"
-                          size="sm"
-                          onClick={() => {
-                            handleQty(e.qty - 1, e.id);
-                          }}
-                        >
-                          -
-                        </Button>
-                        <Center>
-                          <Text>{e.qty}</Text>
-                        </Center>
-                        <Button
-                          size="sm"
-                          borderLeft="1px"
-                          borderRadius="none"
-                          onClick={() => {
-                            handleQty(e.qty + 1, e.id);
-                          }}
-                        >
-                          +
-                        </Button>
-                      </Stack>
-                    </GridItem>
-                    <GridItem colEnd={12}>
-                      <Text>${e.price}</Text>
-                    </GridItem>
-                  </Grid>
-                  <Flex mt="4" mb="4">
-                    <Text>SUBTOTAL</Text>
-                    <Spacer />
-                    <Text>${e.qty * e.price}</Text>
-                  </Flex>
-                </Box>
-              ) : null;
-            })}
+            {/* {items.map((e) => { */}
+            {/* return e.id == id ? ( */}
+            <Box mb="5">
+              <Grid
+                templateRows="auto"
+                templateColumns="repeat(12,1fr)"
+                gap={4}
+                borderBottomWidth="2px"
+                pb="5"
+              >
+                <GridItem rowSpan={3} colSpan={3}>
+                  <Image src={items.img1} />
+                </GridItem>
+                <GridItem colSpan={9} style={{ margin: "10px" }}>
+                  <Text>{items.title}</Text>
+                </GridItem>
+                <GridItem colSpan={9} h="10">
+                  <Text>color - {items.color}</Text>
+                </GridItem>
+                <GridItem colStart={4}>
+                  <Stack border="1px" direction="row">
+                    <Button
+                      borderRight="1px"
+                      borderRadius="none"
+                      size="sm"
+                      onClick={() => {
+                        handleQty(items.qty - 1, items.id);
+                      }}
+                    >
+                      -
+                    </Button>
+                    <Center>
+                      <Text>{items.qty}</Text>
+                    </Center>
+                    <Button
+                      size="sm"
+                      borderLeft="1px"
+                      borderRadius="none"
+                      onClick={() => {
+                        handleQty(items.qty + 1, items.id);
+                      }}
+                    >
+                      +
+                    </Button>
+                  </Stack>
+                </GridItem>
+                <GridItem colEnd={12}>
+                  <Text>${items.price}</Text>
+                </GridItem>
+              </Grid>
+              <Flex mt="4" mb="4">
+                <Text>SUBTOTAL</Text>
+                <Spacer />
+                <Text>${items.qty * items.price}</Text>
+              </Flex>
+            </Box>
+            {/* ) : null; */}
 
             <Box>
               <Text mb="4">
