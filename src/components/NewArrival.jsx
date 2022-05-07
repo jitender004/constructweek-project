@@ -1,79 +1,59 @@
-// import {
-//     FavoriteBorderOutlined,
-//     SearchOutlined,
-//     ShoppingCartOutlined,
-//   } from "@material-ui/icons";
-import styled from "styled-components";
-  
-const Info = styled.div`
-  opacity: 0;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  // background-color: rgba(0, 0, 0, 0.2);
-  z-index: 3;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.5s ease;
-  cursor: pointer;
-`;
+import { Image,Grid,GridItem,Text,Center,Button } from "@chakra-ui/react"
+export const NewArrival = ()=>{
+    const img_arr = [
+        {
+            imgurl:"https://cdn.shopify.com/s/files/1/0248/3473/6191/products/1566289_1800x1800.png?v=1635615949",
+            title:'"DIVA!" T-SHIRT',
+            diss_price:"$694.00",
+            price:"$420.60",
+            save:"Save 39%"
+        },{
+            imgurl:"https://cdn.shopify.com/s/files/1/0248/3473/6191/products/2246726_1800x1800.jpg?v=1651848885",
+            title:'"LA MEDUSA" RUBBER MULES',
+            diss_price:"$492.00",
+            price:"$385.29",
+            save:"Save 22%"
+        },{
+            imgurl:"https://cdn.shopify.com/s/files/1/0248/3473/6191/products/2269028_1800x1800.jpg?v=1651849007",
+            title:'"THE FLUORO MOTO SHOT" BAG',
+            diss_price:"$492",
+            price:"$383.97",
+            save:"Save 22%"
+        },{
+            imgurl:"https://cdn.shopify.com/s/files/1/0248/3473/6191/products/2087946_1800x1800.jpg?v=1638291787",
+            title:"'FOR RIDING' RAINBOOTS",
+            diss_price:"$473.00",
+            price:"$347.65",
+            save:"Save 27%"
+        },{
+            imgurl:"https://cdn.shopify.com/s/files/1/0248/3473/6191/products/2149730_76cf6aa7-502b-4b5b-bd8e-31e1af9ed2bb_1800x1800.jpg?v=1646588764",
+            title:"'KIKI' STRAW CANOTIER HAT",
+            diss_price:"$669.00",
+            price:"$505.65 ",
+            save:"Save 24%"
+        },
+    ]
 
-const Container = styled.div`
-  flex: 1;
-  margin: 5px;
-  min-width: 280px;
-  height: 350px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: rgba(250,252,250,0.6);
-  position: relative;
-
-  &:hover ${Info}{
-    opacity: 1;
-  }
-`;
-
-const Circle = styled.div`
-  width: 200px;
-  height: 200px;
-  // border-radius: 50%;
-  // background-color: white;
-  position: absolute;
-`;
-
-const Image = styled.img`
-  height: 75%;
-  z-index: 2;
-`;
-const Title = styled.h2`
-  color:rgba(255,25,0,0.5);
-  margin-bottom: 20px;
-  font-family:Georgia;
-  text-transform:uppercase;
- 
-  text-align:center;
-`;
-
-
-
-
-const NewArrival = ({ item }) => {
-  return (
-<>
-    <Container>    
-      <Circle />
-      <Image src={item.img} />
-      <Info>
-      <Title>{item.title}</Title>
-      </Info>
-    </Container>
-    </>
-  );
-  
-};
-
-export default NewArrival;
+    return (
+        <div>
+            <Center><Text fontSize='4xl'>NEW ARRIVALS</Text></Center>
+            <Center><Button bg='black' color='white'>VIEW ALL</Button></Center>
+            <Center>
+                <Grid templateColumns='repeat(5, 1fr)' gap={6}>
+                    {img_arr.map((e)=>{
+                        return <GridItem w='100%' p='5' mb='10'>
+                            <Image w='100%' h='300' src={e.imgurl} />
+                            <Center><p>{e.title}</p></Center>
+                            <Center>
+                            <span>{ e.diss_price } from</span>&nbsp;&nbsp;
+                            <span>{ e.price }</span>&nbsp;&nbsp;
+                            <Text color='red'>{ e.save }</Text>
+                            </Center>
+                        </GridItem >
+                    })}
+                </Grid >
+            </Center>
+            <hr />
+        </div>
+    )
+}

@@ -4,8 +4,8 @@ import Announcement from '../components/Announcement'
 import Categories from '../components/Categories'
 import Products from '../components/Products'
 import ControlledCarousel from '../components/ControlledCarousel'
-// import NewArrival from '../components/NewArrival'
-
+import { NewArrival } from '../components/NewArrival'
+import { Tremding } from '../components/Trending'
 
 
 const Home = () => {
@@ -16,8 +16,8 @@ const Home = () => {
       <Categories />
       <Products />
       <ControlledCarousel />
-      {/* <NewArrival /> */}
-      {/* <contr */}
+      <NewArrival />
+      <Tremding />
     </div>
   )
 }

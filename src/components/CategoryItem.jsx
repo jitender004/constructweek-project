@@ -55,11 +55,10 @@ const Button = styled.button`
 
 const CategoryItem = ({ item }) => {
   return (
-    <Container>
+    <Container width="100%">
       <Image src={item.img} />
       <Info>
         <Title>{item.title}</Title>
-        
         <Button>SHOP NOW</Button>
       </Info>
     </Container>

@@ -98,6 +98,18 @@ export const sliderItems = [
       img:"https://cdn.shopify.com/s/files/1/0248/3473/6191/products/1ctbracelet123_180x.jpg?v=1651734996%20180w%20180h",
       title: " jewellery",
     },
+    ,
+    {
+      id:9,
+      img:"https://cdn.shopify.com/s/files/1/0248/3473/6191/products/1313278220_RLLZ_1_400x.jpg?v=1650790947",
+      title: " Pumps & heels",
+    },
+    ,
+    {
+      id:10,
+      img:"https://cdn.shopify.com/s/files/1/0248/3473/6191/products/1411376764_RLLZ_1_180x.jpg?v=1651695513",
+      title: "Women's Top",
+    },
   ]
   export const NewArrivalproduct = [
     {
