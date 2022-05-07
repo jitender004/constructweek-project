@@ -26,13 +26,17 @@ export function Cartpage(isOpen, onOpen, onClose, setsidebar, sidebar) {
   const [qty, setQty] = useState(1);
 
   const { id } = useParams();
+
   const updatecartqty = async (value, id) => {
     const data = await axios.patch(
-      `http://localhost:8080/jewelry-watches/${id}`,
+      `https://bluefly-api.herokuapp.com/product/${id}`,
       {
         qty: value,
       }
     );
+    // .then((res) => {
+    //   getCartData();
+    // });
     setQty(data.data.qty);
   };
 

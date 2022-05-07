@@ -92,7 +92,7 @@ const SingleProduct = () => {
               <p>FREE SHIPPING ON ORDERS OVER $99</p>
               <hr style={{ marginTop: "30px" }} />
 
-              {e.size ? (
+              { e.size.length > 1 ? (
                 <div>
                   <p>SIZE</p>
                   <div
@@ -131,7 +131,13 @@ const SingleProduct = () => {
         ) : null
       )}
       {side ? (
-        <Cartpage isOpen={isOpen} onOpe={onOpen} onClose={onClose} setsidebar sidebar />
+        <Cartpage
+          isOpen={isOpen}
+          onOpe={onOpen}
+          onClose={onClose}
+          setsidebar
+          sidebar
+        />
       ) : null}
     </div>
   );
