@@ -24,33 +24,6 @@ export const Sign = () => {
     });
   };
 
-  //   let postData = async (value) => {
-  //     let res = await fetch("https://bluefly-api.herokuapp.com/user",{
-
-  //         method: 'POST',
-  //         headers: { 'Content-Type': 'application/json'},
-  //         body: JSON.stringify({
-  //             value,
-  //         })
-  //     })
-  //      let data = await res.json();
-  //      console.log(data);
-  //   }
-
-  //   const handleSubmit = (e) => {
-  // 		e.preventDefault();
-  // 		console.log(user);
-  // 		axios.post('https://bluefly-api.herokuapp.com/user')
-  // 			.then(function (response) {
-  // 				console.log(response);
-  // 			})
-  // 			.catch(function (error) {
-  // 				console.log(error);
-  // 			});
-  //         let value = user;
-  //         postData(value)
-  //   };
-
   const postData = async ({ firstName, lastName, email, password, mobile }) => {
     try {
       let res = await fetch("https://bluefly-api.herokuapp.com/user", {
@@ -79,7 +52,7 @@ export const Sign = () => {
   };
 
   return (
-    <div className="main">
+    <div className="main" style={{}}>
       <h1 className="head1">SIGNUP</h1>
       <form className="loginform" onSubmit={handleSubmit}>
         <label className="label">FIRST NAME</label>
