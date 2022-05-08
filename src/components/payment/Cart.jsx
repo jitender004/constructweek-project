@@ -1,8 +1,6 @@
 import { 
     Box, 
-
     Text, 
-
     Image, 
     Table,
     Tbody,
@@ -21,7 +19,7 @@ import {
     Center
 } from '@chakra-ui/react';
 import {useState, useEffect, useRef} from 'react';
-import {ChevronLeftIcon} from '@chakra-ui/icons';
+// import {ChevronLeftIcon} from '@chakra-ui/icons';
 import axios from 'axios'
 import { useParams, Link, useNavigate} from 'react-router-dom';
 
@@ -166,7 +164,9 @@ export const Cart = () => {
                     </Box>
                     <Box mt={{lg:'3%'}}>
                         <HStack spacing='345px'>
-                            <Link to='/'> <ChevronLeftIcon />Return to shipping</Link>
+                            <Link to='/'> 
+                            {/* <ChevronLeftIcon /> */}
+                            Return to shipping</Link>
                             <Box as='button'
                             padding='.85em 1.7em'
                             backgroundColor='#111111'

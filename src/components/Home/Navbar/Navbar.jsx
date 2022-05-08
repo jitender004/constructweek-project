@@ -67,6 +67,124 @@ export const Navbar = () => {
       </Grid>
       <Box w="100%" align="center" mt="20px">
         <Flex>
+          <Menu isOpen6={isOpen6}>
+            <MenuButton
+              variant="ghost"
+              mx={1}
+              py={[1, 2, 2]}
+              px={4}
+              borderRadius={5}
+              _hover={{ bg: "white" }}
+              aria-label="Courses"
+              fontWeight="normal"
+              fontSize="12px"
+              lineHeight="15px"
+              textAlign="center"
+              letterSpacing="2.6px"
+              fontFamily="futura,sans-serif"
+              onMouseEnter={onOpen6}
+              onMouseLeave={onClose6}
+            >
+              JEWELERY & WATCHES
+            </MenuButton>
+            <MenuList
+              onMouseEnter={onOpen6}
+              onMouseLeave={onClose6}
+              display="flex"
+              gap="30px"
+              align="center"
+            >
+              <div align="center">
+                <h4
+                  fontSize="13px"
+                  lineHeight="20.8px"
+                  textAlign="center"
+                  letterSpacing="2.6px"
+                >
+                  WOMEN'S JEWELERY
+                </h4>
+                <Link to="/product">
+                  <MenuItem>Shop All</MenuItem>
+                </Link>
+
+                <MenuItem>Boots</MenuItem>
+                <MenuItem>Espadrilles</MenuItem>
+                <MenuItem>Flats</MenuItem>
+                <MenuItem>Mules & Slides</MenuItem>
+                <MenuItem>Oxfords & Loafers</MenuItem>
+                <MenuItem>Pumps & Heels</MenuItem>
+                <MenuItem>Sandals</MenuItem>
+                <MenuItem>Slippers</MenuItem>
+                <MenuItem>Sneakers</MenuItem>
+                <MenuItem>Wedges</MenuItem>
+              </div>
+              <div align="center">
+                <h4
+                  fontSize="13px"
+                  lineHeight="20.8px"
+                  textAlign="center"
+                  letterSpacing="2.6px"
+                >
+                  WOMEN'S WATCHES
+                </h4>
+                <MenuItem>Burberry</MenuItem>
+                <MenuItem>Chloe</MenuItem>
+                <MenuItem>Christian Louboutin</MenuItem>
+                <MenuItem>Dolce & Gabbana</MenuItem>
+                <MenuItem>Guiseppe</MenuItem>
+                <MenuItem>Gucci</MenuItem>
+                <MenuItem>Jimmy Choo</MenuItem>
+                <MenuItem>Manolo Blahnik</MenuItem>
+                <MenuItem>Prada</MenuItem>
+                <MenuItem>Saint Laurent</MenuItem>
+                <MenuItem>Salvatore</MenuItem>
+                <MenuItem>Tod's</MenuItem>
+              </div>
+              <div align="center">
+                <h4
+                  fontSize="13px"
+                  lineHeight="20.8px"
+                  textAlign="center"
+                  letterSpacing="2.6px"
+                >
+                  MEN'S JEWELERY
+                </h4>
+                <MenuItem>Shop All</MenuItem>
+                <MenuItem>Boots</MenuItem>
+                <MenuItem>Espadrilles</MenuItem>
+                <MenuItem>Flats</MenuItem>
+                <MenuItem>Mules & Slides</MenuItem>
+                <MenuItem>Oxfords & Loafers</MenuItem>
+                <MenuItem>Pumps & Heels</MenuItem>
+                <MenuItem>Sandals</MenuItem>
+                <MenuItem>Slippers</MenuItem>
+                <MenuItem>Sneakers</MenuItem>
+                <MenuItem>Wedges</MenuItem>
+              </div>
+              <div align="center">
+                <h4
+                  fontSize="13px"
+                  lineHeight="20.8px"
+                  textAlign="center"
+                  letterSpacing="2.6px"
+                >
+                  MEN'S WATCHES
+                </h4>
+                <MenuItem>Burberry</MenuItem>
+                <MenuItem>Chloe</MenuItem>
+                <MenuItem>Christian Louboutin</MenuItem>
+                <MenuItem>Dolce & Gabbana</MenuItem>
+                <MenuItem>Guiseppe</MenuItem>
+                <MenuItem>Gucci</MenuItem>
+                <MenuItem>Jimmy Choo</MenuItem>
+                <MenuItem>Manolo Blahnik</MenuItem>
+                <MenuItem>Prada</MenuItem>
+                <MenuItem>Saint Laurent</MenuItem>
+                <MenuItem>Salvatore</MenuItem>
+                <MenuItem>Tod's</MenuItem>
+              </div>
+            </MenuList>
+          </Menu>
           <Menu isOpen={isOpen}>
             <MenuButton
               variant="ghost"
@@ -717,7 +835,7 @@ export const Navbar = () => {
               </div>
             </MenuList>
           </Menu>
-          <Menu isOpen6={isOpen6}>
+          {/* <Menu isOpen6={isOpen6}>
             <MenuButton
               variant="ghost"
               mx={1}
@@ -834,7 +952,7 @@ export const Navbar = () => {
                 <MenuItem>Tod's</MenuItem>
               </div>
             </MenuList>
-          </Menu>
+          </Menu> */}
 
           <Menu isOpen7={isOpen7}>
             <MenuButton

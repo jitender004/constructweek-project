@@ -1,6 +1,7 @@
-import "./Sign.css";
+import "./Signn.css";
 import { useState } from "react";
 // import axios from "axios";
+import { Link } from "react-router-dom";
 
 export const Sign = () => {
   const [user, setUser] = useState({
@@ -52,7 +53,7 @@ export const Sign = () => {
   };
 
   return (
-    <div className="main" style={{}}>
+    <div className="main" style={{ marginBottom: "200px" }}>
       <h1 className="head1">SIGNUP</h1>
       <form className="loginform" onSubmit={handleSubmit}>
         <label className="label">FIRST NAME</label>
@@ -111,7 +112,13 @@ export const Sign = () => {
         />
         <br></br>
         <br></br>
-        <input type="submit" value={"SUBMIT"} className="login_submit" />
+        <Link
+          to={{
+            pathname: `/login`,
+          }}
+        >
+          <input type="submit" value={"SUBMIT"} className="login_submit" />
+        </Link>
       </form>
       <br></br>
     </div>
