@@ -1,4 +1,5 @@
 import { Image,Grid,GridItem,Text,Center,Button } from "@chakra-ui/react"
+import "./NewArrival.css";
 export const NewArrival = ()=>{
     const img_arr = [
         {
@@ -36,8 +37,8 @@ export const NewArrival = ()=>{
 
     return (
         <div>
-            <Center><Text fontSize='4xl'>NEW ARRIVALS</Text></Center>
-            <Center><Button bg='black' color='white'>VIEW ALL</Button></Center>
+            <Center><Text fontSize='4xl' mt={3} >NEW ARRIVALS</Text></Center>
+            <Center><Button bg='black' color='white' mt={3} >VIEW ALL</Button></Center>
             <Center>
                 <Grid templateColumns='repeat(5, 1fr)' gap={6}>
                     {img_arr.map((e)=>{

@@ -12,7 +12,7 @@ const Container = styled.div`
 const Products = () => {
   return (
       <>
-    <h2 style={{textAlign:"center",fontSize:"30px",fontFamily: "Tiemann,serif"}}>SHOP BY CATEGORY</h2>
+    <h2 style={{textAlign:"center",fontSize:"30px",fontFamily: "Tiemann,serif",marginTop:"30px"}}>SHOP BY CATEGORY</h2>
     <Container> 
       {popularProducts.map((item) => (
         <Product item={item} key={item.id} />

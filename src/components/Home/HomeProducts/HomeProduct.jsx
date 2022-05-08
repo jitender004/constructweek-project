@@ -49,12 +49,17 @@
     height: 75%;
     z-index: 2;
   `;
-  const Title = styled.h2`
-    color:rgba(255,25,0,0.5);
+  const Title = styled.h1`
+    color:rgba(0,0,0,0.8);
+    font-size:23px;
     margin-bottom: 20px;
-    font-family:Georgia;
+    color:white;
+    font-family:Tiemann,serif;
     text-transform:uppercase;
-   
+   background-color:black;
+//  padding:20px
+  // border: 1px solid blue;
+   box-sizing: border-box;
     text-align:center;
 `;
   

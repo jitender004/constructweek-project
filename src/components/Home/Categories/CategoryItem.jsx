@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { mobile } from "../../responsive";
+import { mobile } from "../../../responsive";
 
 const Container = styled.div`
   flex: 1;
@@ -55,6 +55,7 @@ const Button = styled.button`
 
 const CategoryItem = ({ item }) => {
   return (
+    <>
     <Container width="100%">
       <Image src={item.img} />
       <Info>
@@ -62,6 +63,8 @@ const CategoryItem = ({ item }) => {
         <Button>SHOP NOW</Button>
       </Info>
     </Container>
+    
+    </>
   );
 };
 

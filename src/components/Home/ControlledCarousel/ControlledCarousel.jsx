@@ -9,7 +9,7 @@ const ControlledCarousel = () => {
   <Carousel.Item interval={1000}>
     <Image
       className="d-block" 
-      src="https://cdn.shopify.com/s/files/1/0248/3473/6191/files/fENDI_1400x.jpg?v=1630506238" width="100%" height="300"
+      src="https://cdn.shopify.com/s/files/1/0248/3473/6191/files/fENDI_1400x.jpg?v=1630506238" width="100%" height=""
       alt="First slide"
       h='400px'
     />
@@ -51,6 +51,7 @@ const ControlledCarousel = () => {
     </Carousel.Caption>
   </Carousel.Item>
 </Carousel>
+<hr />
     </div>
   )
 }
