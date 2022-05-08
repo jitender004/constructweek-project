@@ -9,7 +9,7 @@ const Container = styled.div`
     justify-content: space-between;
 `;
 
-const Products = () => {
+const HomeProducts = () => {
   return (
       <>
     <h2 style={{textAlign:"center",fontSize:"30px",fontFamily: "Tiemann,serif",marginTop:"30px"}}>SHOP BY CATEGORY</h2>
@@ -22,4 +22,4 @@ const Products = () => {
   );
 };
 
-export default Products;
+export default HomeProducts;

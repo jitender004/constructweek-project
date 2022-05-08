@@ -1,4 +1,4 @@
-import "react-image-gallery/styles/css/image-gallery.css";
+// import "react-image-gallery/styles/css/image-gallery.css";
 import { Carousel } from "react-carousel-minimal";
 // import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";

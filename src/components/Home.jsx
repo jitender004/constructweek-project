@@ -2,7 +2,7 @@ import React from 'react'
 import Slider from '../components/Home/Slider/Slider'
 import Announcement from '../components/Home/Announcement/Announcement'
 import Categories from '../components/Home/Categories/Categories'
-import Products from '../components/Home/HomeProducts/HomeProducts'
+import HomeProducts from '../components/Home/HomeProducts/HomeProducts'
 import ControlledCarousel from '../components/Home/ControlledCarousel/ControlledCarousel'
 import { NewArrival } from '../components/Home/NewArrival/NewArrival'
 import { Tremding } from '../components/Home/Tremding/Trending'
@@ -18,7 +18,7 @@ const Home = () => {
       <Announcement />
       <Slider />
       <Categories />
-      <Products />
+      <HomeProducts />
       <ControlledCarousel />
       <NewArrival />
       <Tremding />

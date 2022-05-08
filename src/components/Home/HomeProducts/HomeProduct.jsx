@@ -65,7 +65,7 @@
   
   
   
-  const Product = ({ item }) => {
+  const HomeProduct = ({ item }) => {
     return (
 <>
       
@@ -81,4 +81,4 @@
     
   };
   
-  export default Product;
+  export default HomeProduct;
