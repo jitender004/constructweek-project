@@ -26,7 +26,7 @@ export function Cartpage(isOpen, onOpen, onClose, setsidebar, sidebar) {
   const [qty, setQty] = useState(1);
 
   const { id } = useParams();
-  console.log("id", items);
+  // console.log("id", items);
 
   const updatecartqty = async (value) => {
     const data = await axios
@@ -147,16 +147,18 @@ export function Cartpage(isOpen, onOpen, onClose, setsidebar, sidebar) {
               <Text mb="4">
                 Shipping, taxes, and discounts codes calculated at checkout.
               </Text>
+              <Link to={{pathname: `/payment/${id}`}}>
               <Button
                 width="100%"
                 bgColor="black"
                 color="white"
-                onClick={() => {
-                  "<Payment></Payment>";
-                }}
+                // onClick={() => {
+                //   "<Payment></Payment>";
+                // }}
               >
-                <Link to={"/cart"}>Payment Page</Link>
+                Payment Page
               </Button>
+              </Link>
             </Box>
           </DrawerBody>
         </DrawerContent>
