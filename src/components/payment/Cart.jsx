@@ -1,17 +1,13 @@
 import { 
     Box, 
-    Heading, 
+
     Text, 
-    Divider, 
+
     Image, 
     Table,
-    Thead,
     Tbody,
-    Tfoot,
     Tr,
-    Th,
     Td,
-    TableCaption,
     TableContainer,
     Radio,
     RadioGroup,
@@ -19,19 +15,15 @@ import {
     Checkbox,
     HStack,
     VStack,
-    Spinner,
-    Tag,
     Input,
     Grid,
     GridItem,
     Center
 } from '@chakra-ui/react';
-import { Link  } from 'react-router-dom';
 import {useState, useEffect, useRef} from 'react';
 import {ChevronLeftIcon} from '@chakra-ui/icons';
 import axios from 'axios'
-import {useParams} from 'react-router-dom';
-import {useNavigate} from 'react-router-dom';
+import { useParams, Link, useNavigate} from 'react-router-dom';
 
 
 export const Cart = () => {
@@ -88,7 +80,7 @@ export const Cart = () => {
 
 
     const handlePay = (e) => {
-        navigate('/user');
+        navigate('/paymentsuccess');
     }
     
     return(

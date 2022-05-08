@@ -14,7 +14,7 @@ export const PaymentSuccess = () => {
         isRendered.current = true;
         setTimeout(() => {
             navigate('/');
-        }, 2000)
+        }, 3000)
     }, []);
 
     return(

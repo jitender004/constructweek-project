@@ -1,8 +1,9 @@
 .container{
     width: 100%;
-    height: 700px;
-    position: fixed;
+    height: 100vh;
+    position: relative;
     display: table;
+    background-color: whitesmoke;
 }
 .done{
     width: 300px;

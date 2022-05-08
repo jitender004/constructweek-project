@@ -22,8 +22,8 @@ const ProductCard = ({
       >
         <div key={id}>
           <div className="x">
-            <a href="#" className="hover-switch">
-              <img src={img1} />
+            <a className="hover-switch">
+              <img src={img1} alt='' />
               {/* <img src={e.img3} /> */}
             </a>
             <img src={img3} alt="" />

@@ -61,55 +61,58 @@ export const popularProducts = [
   {
     id: 1,
     img: "https://www.burdastyle.com/pub/media/catalog/product/cache/7bd3727382ce0a860b68816435d76e26/107/BUS-PAT-BURTE-1320516/1170x1470_BS_2016_05_132_front.png",
-    title: " Dresses",
+    title: " Dresses"
   },
   {
     id: 2,
     img: "https://cdn.shopify.com/s/files/1/0248/3473/6191/products/1313278220_RLLZ_1_400x.jpg?v=1650790947",
-    title: " Pumps & heels",
+    title: " Pumps & heels"
   },
   {
     id: 3,
     img: "https://cdn.shopify.com/s/files/1/0248/3473/6191/products/1160242638_RLLZ_1_180x.jpg?v=1651786583%20180w%20225h",
-    title: " Handbags",
+    title: " Handbags"
   },
   {
     id: 4,
     img: "https://cdn.shopify.com/s/files/1/0248/3473/6191/products/1313202046_RLLZ_1_180x.jpg?v=1651598055%20180w%20225h",
-    title: " Women's snicker",
+    title: " Women's snicker"
   },
+  
   {
     id: 5,
     img: "https://cdn.shopify.com/s/files/1/0248/3473/6191/products/1881082_180x.jpg?v=1634581037%20180w%20180h",
-    title: " Men's tshirt",
+    title: " Men's tshirt"
   },
+
   {
     id: 6,
     img: "https://cdn.shopify.com/s/files/1/0248/3473/6191/products/1312134872_RLLZ_1_180x.jpg?v=1651561993%20180w%20225h",
-    title: " Men's snickers",
+    title: " Men's snickers"
   },
+
   {
     id: 7,
     img: "https://cdn.shopify.com/s/files/1/0248/3473/6191/products/1411376764_RLLZ_1_c0c336d5-188c-42b1-89de-c830020a8bdc_180x.jpg?v=1651917535%20180w%20225h",
-    title: " Women's Top",
+    title: " Women's Top"
   },
+
   {
     id: 8,
     img: "https://cdn.shopify.com/s/files/1/0248/3473/6191/products/1ctbracelet123_180x.jpg?v=1651734996%20180w%20180h",
-    title: " jewellery",
+    title: " jewellery"
   },
-  ,
+
   {
     id: 9,
     img: "https://cdn.shopify.com/s/files/1/0248/3473/6191/products/C8I6fJg8B2EulkoTSS9S8EbD1IsdXTM1-25_180x.jpg?v=1651300585%20180w%20180h",
-    title: "Women's Denim",
+    title: "Women's Denim"
   },
-  ,
   {
     id: 10,
     img: "https://cdn.shopify.com/s/files/1/0248/3473/6191/products/2227080_180x.jpg?v=1648737046%20180w%20270h",
-    title: "Women's dresses",
-  },
+    title: "Women's dresses"
+  }
 ];
 export const NewArrivalproduct = [
   {
