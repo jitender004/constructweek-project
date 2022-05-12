@@ -4,7 +4,6 @@ import { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Tempcontext } from "../../../context/Tempcontext";
 
-
 export const Login = () => {
   //  use reqres to log user in.
   const [data, setData] = useState([]);
@@ -47,7 +46,7 @@ export const Login = () => {
   };
 
   return (
-    <div className="main">
+    <div className="main" style={{ marginTop: "150px" }}>
       <h1 className="head1">LOGIN</h1>
       <form className="loginform" onSubmit={sendToken}>
         <label className="label">EMAIL</label>

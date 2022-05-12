@@ -195,7 +195,7 @@ const Productcomp = () => {
   if (pro.length === 0) return null;
 
   return (
-    <div className="mainbody">
+    <div className="mainbody" style={{ marginTop: "160px" }}>
       <div>
         <h1 style={{ fontSize: "40px" }}>Women's Jewelry & Watches</h1>
 

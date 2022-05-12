@@ -34,7 +34,7 @@ const SingleProduct = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   if (pro.length === 0) return null;
   return (
-    <div>
+    <div style={{ marginTop: "100px" }}>
       <div className="onepro">
         <div className="forimg">
           <div style={{ textAlign: "center" }}>

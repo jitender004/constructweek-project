@@ -79,6 +79,7 @@
     margin-bottom:5px;
   }
   .btn{
+    
     width:70%;
     height:30px;
     background-color:black;
@@ -87,6 +88,7 @@
     outline:none;
     margin-bottom:5px;
     font-family: futura,sans-serif;
+
   }
   .logo1{
     width:300px;

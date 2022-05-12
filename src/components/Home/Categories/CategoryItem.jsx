@@ -32,6 +32,7 @@ const Info = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+ 
 `;
 
 const Title = styled.h1`
@@ -58,7 +59,7 @@ const CategoryItem = ({ item }) => {
     <>
     <Container width="100%">
       <Image src={item.img} />
-      <Info>
+      <Info >
         <Title>{item.title}</Title>
         <Button>SHOP NOW</Button>
       </Info>

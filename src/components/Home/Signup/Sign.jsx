@@ -53,7 +53,7 @@ export const Sign = () => {
   };
 
   return (
-    <div className="main" style={{ marginBottom: "200px" }}>
+    <div className="main" style={{ marginBottom: "200px", marginTop: "150px" }}>
       <h1 className="head1">SIGNUP</h1>
       <form className="loginform" onSubmit={handleSubmit}>
         <label className="label">FIRST NAME</label>

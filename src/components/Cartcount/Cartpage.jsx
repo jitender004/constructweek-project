@@ -147,17 +147,17 @@ export function Cartpage(isOpen, onOpen, onClose, setsidebar, sidebar) {
               <Text mb="4">
                 Shipping, taxes, and discounts codes calculated at checkout.
               </Text>
-              <Link to={{pathname: `/payment/${id}`}}>
-              <Button
-                width="100%"
-                bgColor="black"
-                color="white"
-                // onClick={() => {
-                //   "<Payment></Payment>";
-                // }}
-              >
-                Payment Page
-              </Button>
+              <Link to={{ pathname: `/payment/${id}` }}>
+                <Button
+                  width="100%"
+                  bgColor="black"
+                  color="white"
+                  // onClick={() => {
+                  //   "<Payment></Payment>";
+                  // }}
+                >
+                  Payment Page
+                </Button>
               </Link>
             </Box>
           </DrawerBody>

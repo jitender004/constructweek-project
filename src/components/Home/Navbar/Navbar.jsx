@@ -29,7 +29,16 @@ export const Navbar = () => {
   const { isOpen9, onOpen9, onClose9 } = useDisclosure();
 
   return (
-    <Box w="100%" p={4} color="black" mt="20px">
+    <Box
+      w="100%"
+      p={4}
+      color="black"
+      mt="20px"
+      position="fixed"
+      top="-5"
+      background="white"
+      zIndex="100"
+    >
       <Grid className="upper" templateColumns="repeat(5, 1fr)" gap={8}>
         <GridItem w="100%" h="10" />
         <GridItem w="100%" h="10" />
