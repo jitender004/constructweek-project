@@ -1,7 +1,7 @@
 export const sliderItems = [
   {
     id: 1,
-    img: "https://cdn.shopify.com/s/files/1/0248/3473/6191/files/Valentino_1400x.jpg?v=1630420054",
+    img: "https://cdn.shopify.com/s/files/1/0248/3473/6191/files/Prada_1400x.jpg?v=1630505683",
     title: "SUMMER SALE",
     desc: "DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS.",
     bg: "f5fafd",
@@ -15,15 +15,16 @@ export const sliderItems = [
   },
   {
     id: 3,
-    img: "https://cdn.shopify.com/s/files/1/0248/3473/6191/files/Bottega_Veneta_1400x.jpg?v=1615206215",
+    img: "https://cdn.shopify.com/s/files/1/0248/3473/6191/files/Valentino_1400x.jpg?v=1630420054",
     title: "LOUNGEWEAR LOVE",
     desc: "DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS.",
     bg: "fbf0f4",
   },
   {
     id: 4,
-    img: "https://cdn.shopify.com/s/files/1/0248/3473/6191/files/Prada_1400x.jpg?v=1630505683",
+
     title: "LOUNGEWEAR LOVE",
+    img: "https://cdn.shopify.com/s/files/1/0248/3473/6191/files/Bottega_Veneta_1400x.jpg?v=1615206215",
     desc: "DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS.",
     bg: "fbf0f4",
   },
@@ -78,7 +79,7 @@ export const popularProducts = [
     img: "https://cdn.shopify.com/s/files/1/0248/3473/6191/products/1313202046_RLLZ_1_180x.jpg?v=1651598055%20180w%20225h",
     title: " Women's snicker"
   },
-  
+
   {
     id: 5,
     img: "https://cdn.shopify.com/s/files/1/0248/3473/6191/products/1881082_180x.jpg?v=1634581037%20180w%20180h",

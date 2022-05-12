@@ -17,7 +17,7 @@ const Container = styled.div`
 const Arrow = styled.div`
   width: 50px;
   height: 50px;
-  background-color: rgba(0,0,50,0.7);
+  background-color: rgba(0, 0, 50, 0.7);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -47,7 +47,9 @@ const Slide = styled.div`
   height: 100vh;
   display: flex;
   align-items: center;
-  background-color: #${(props) => props.bg};
+  background: ${(props) => `url(${props.img})`};
+  background-repeat: no-repeat;
+  background-size: cover;
 `;
 
 const ImgContainer = styled.div`
@@ -65,29 +67,35 @@ const Image = styled.img`
 const InfoContainer = styled.div`
   flex: 1;
   padding: 25px;
-  // z-index:2;
-  margin-bottom:60px;
+  margin-bottom: 60px;
+  align-items: center;
+  justify-content: center;
 `;
 
 const Title = styled.h1`
-  font-size: 25px;
+  font-size: 50px;
+  color: #ebe4e4;
+  font-weight: 700;
+  font-family: Futura, sans-serif;
 `;
+
 const Desc = styled.p`
   margin: 40px 0px;
   font-size: 20px;
   font-weight: 300;
   letter-spacing: 3px;
+  color: #f0e7e7;
 `;
 
 const Button = styled.button`
   padding: 10px;
   font-size: 20px;
-  background-color:teal;
+  background-color: teal;
   cursor: pointer;
-  border-radius:5px;
-  margin-bottom:20px;
-  border:none;
-  color:white;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  border: none;
+  color: white;
 `;
 
 const Slider = () => {
@@ -107,15 +115,10 @@ const Slider = () => {
       </Arrow>
       <Wrapper slideIndex={slideIndex}>
         {sliderItems.map((item) => (
-          <Slide bg={item.img} key={item.id}>
-            <ImgContainer>
-              {/* <Image src={item.img} /> */}
-              <Title>{item.title}</Title>
-              <Desc>{item.desc}</Desc>    
-            </ImgContainer>
+          <Slide img={item.img} key={item.id}>
             <InfoContainer>
-            <Button>SHOW NOW</Button>
-                    
+              <Title>{item.title}</Title>
+              <Desc>{item.desc}</Desc>
             </InfoContainer>
           </Slide>
         ))}
