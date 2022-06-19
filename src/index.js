@@ -5,6 +5,7 @@ import App from "./App";
 import { Provider } from 'react-redux';
 import { ChakraProvider } from "@chakra-ui/react";
 // import { ChakraProvider } from '@chakra-ui/react';
+import { FaBarcode } from "react-icons/fa";
 import { BrowserRouter } from "react-router-dom";
 import { Tempcontextprovider } from "./context/Tempcontext";
 import { store } from './Redux/store';

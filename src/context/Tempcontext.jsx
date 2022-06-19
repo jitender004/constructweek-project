@@ -1,6 +1,6 @@
 import { createContext, useState } from "react";
 
-
+import  React from "react"
 export const Tempcontext = createContext()
 export const Tempcontextprovider = ({ children }) => {
     const [isAuth, setisAuth] = useState(false)

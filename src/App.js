@@ -2,8 +2,7 @@
 import './App.css';
 import React from "react";
 import Home from './components/Home';
-// import footer from "../"
-
+import { FaBaby } from 'react-icons/fa';
 import { Routes, Route } from "react-router-dom"
 import { Login } from "./components/Home/Login/Login";
 import { Sign } from "./components/Home/Signup/Sign";
