@@ -10,9 +10,17 @@ import {
   Menu,
   MenuButton,
   MenuList,
+  VStack,
+  Container,
+  HStack,
+  Input,
+  InputLeftElement,
+  InputGroup,
 } from "@chakra-ui/react";
+import { Spacer } from "@chakra-ui/react";
+import { Tooltip } from "@chakra-ui/react";
 // import { IconButton } from "@chakra-ui/react";
-import { FaSearch } from "react-icons/fa";
+import { AiOutlineSearch } from "react-icons/ai";
 import { BsBag, BsPerson } from "react-icons/bs";
 import { Link } from "react-router-dom";
 
@@ -31,28 +39,38 @@ export const Navbar = () => {
   return (
     <Box
       w="100%"
-      p={4}
+      // p={2}
       color="black"
       mt="20px"
+      // mb="-15px"
       position="fixed"
       top="-5"
       background="white"
       zIndex="100"
+      // border="1px solid red"
     >
-      <Grid className="upper" templateColumns="repeat(5, 1fr)" gap={8}>
+      <Box bg="black" p={2} color="white" fontSize={12}>
+        <Flex>
+          <Box marginLeft={20} display="flex" justifyContent="space-between">
+            <Text marginRight={5}>Free Shipping</Text>
+            <Text>Check Store</Text>
+          </Box>
+          <Spacer />
+          <Box marginRight={20} display="flex">
+            <Text marginRight={5}>Help</Text>
+            <Text>Dowload App</Text>
+          </Box>
+        </Flex>
+      </Box>
+      {/* <Grid className="upper" templateColumns="repeat(5, 1fr)" gap={8}>
         <GridItem w="100%" h="10" />
         <GridItem w="100%" h="10" />
         <GridItem w="100%" h="10">
-          <Link to="/">
-            <Image
-              src="https://cdn.shopify.com/s/files/1/0248/3473/6191/files/BLUEFLY-LOGO-11-20.png?v=1574278243"
-              alt="Dan Abramov"
-            />
-          </Link>
+         
         </GridItem>
         <GridItem w="100%" h="10" />
         <GridItem w="100%" h="10" color="black">
-          <Flex gap={8} align="right">
+          <Flex gap={5} align="right">
             <Flex align="center" gap={2}>
               <FaSearch fontSize="25px" />
               <Text
@@ -70,31 +88,45 @@ export const Navbar = () => {
             <Link to="/cart">
               <BsBag fontSize="25px" align="center" />
             </Link>
-            {/* <Link to="/cart">Search</Link> */}
+            <Link to="/cart"></Link>
           </Flex>
         </GridItem>
-      </Grid>
-      <Box w="100%" align="center" mt="20px">
+      </Grid> */}
+
+      <Box
+        w="100%"
+        align="center"
+        backgroundColor="light-grey"
+        // border="1px solid black"
+      >
         <Flex>
+          <Link to="/">
+            <Image
+              width={250}
+              height={20}
+              src="https://www.linkpicture.com/q/logo1_35.png"
+              alt="Dan Abramov"
+            />
+          </Link>
           <Menu isOpen6={isOpen6}>
             <MenuButton
               variant="ghost"
               mx={1}
               py={[1, 2, 2]}
-              px={4}
+              px={2}
               borderRadius={5}
               _hover={{ bg: "white" }}
               aria-label="Courses"
               fontWeight="normal"
-              fontSize="12px"
+              fontSize="13px"
               lineHeight="15px"
               textAlign="center"
-              letterSpacing="2.6px"
+              letterSpacing="2px"
               fontFamily="futura,sans-serif"
               onMouseEnter={onOpen6}
               onMouseLeave={onClose6}
             >
-              JEWELERY & WATCHES
+              Women
             </MenuButton>
             <MenuList
               onMouseEnter={onOpen6}
@@ -156,7 +188,7 @@ export const Navbar = () => {
                   textAlign="center"
                   letterSpacing="2.6px"
                 >
-                  MEN'S JEWELERY
+                  WOMEN'S CLOTHING
                 </h4>
                 <MenuItem>Shop All</MenuItem>
                 <MenuItem>Boots</MenuItem>
@@ -177,7 +209,7 @@ export const Navbar = () => {
                   textAlign="center"
                   letterSpacing="2.6px"
                 >
-                  MEN'S WATCHES
+                  WOMEN'S FASHION
                 </h4>
                 <MenuItem>Burberry</MenuItem>
                 <MenuItem>Chloe</MenuItem>
@@ -207,13 +239,13 @@ export const Navbar = () => {
               fontSize="12px"
               lineHeight="15px"
               textAlign="center"
-              letterSpacing="2.6px"
+              letterSpacing="2px"
               fontFamily="futura,sans-serif"
               onMouseEnter={onOpen}
               onMouseLeave={onClose}
               display="inline-block"
             >
-              SHOES
+              Men
             </MenuButton>
             <MenuList
               onMouseEnter={onOpen}
@@ -229,9 +261,52 @@ export const Navbar = () => {
                   textAlign="center"
                   letterSpacing="2.6px"
                 >
-                  WOMEN'S SHOES
+                  MEN'S SHOES
                 </h4>
 
+                <MenuItem>Shop All</MenuItem>
+                <MenuItem>Jeans</MenuItem>
+                <MenuItem>T-Shirts</MenuItem>
+                <MenuItem>Jeans</MenuItem>
+                <MenuItem>Mules & Slides</MenuItem>
+                <MenuItem>Oxfords & Loafers</MenuItem>
+                <MenuItem>Pumps & Heels</MenuItem>
+                <MenuItem>Trousers</MenuItem>
+                <MenuItem>Slippers</MenuItem>
+                <MenuItem>Sneakers</MenuItem>
+                <MenuItem>Wedges</MenuItem>
+              </div>
+              <div align="center">
+                <h4
+                  fontSize="13px"
+                  lineHeight="20.8px"
+                  textAlign="center"
+                  letterSpacing="2.6px"
+                >
+                  MEN'S DESIGNERS
+                </h4>
+                <MenuItem>Burberry</MenuItem>
+                <MenuItem>Chloe</MenuItem>
+                <MenuItem>Christian Louboutin</MenuItem>
+                <MenuItem>Dolce & Gabbana</MenuItem>
+                <MenuItem>Guiseppe</MenuItem>
+                <MenuItem>Gucci</MenuItem>
+                <MenuItem>Jimmy Choo</MenuItem>
+                <MenuItem>Manolo Blahnik</MenuItem>
+                <MenuItem>Prada</MenuItem>
+                <MenuItem>Saint Laurent</MenuItem>
+                <MenuItem>Salvatore</MenuItem>
+                <MenuItem>Tod's</MenuItem>
+              </div>
+              <div align="center">
+                <h4
+                  fontSize="13px"
+                  lineHeight="20.8px"
+                  textAlign="center"
+                  letterSpacing="2.6px"
+                >
+                  MEN'S JACKETS
+                </h4>
                 <MenuItem>Shop All</MenuItem>
                 <MenuItem>Boots</MenuItem>
                 <MenuItem>Espadrilles</MenuItem>
@@ -251,7 +326,195 @@ export const Navbar = () => {
                   textAlign="center"
                   letterSpacing="2.6px"
                 >
-                  WOMEN'S DESIGNERS
+                  MEN'S CLOTHING
+                </h4>
+                <MenuItem>Burberry</MenuItem>
+                <MenuItem>Chloe</MenuItem>
+                <MenuItem>Christian Louboutin</MenuItem>
+                <MenuItem>Dolce & Gabbana</MenuItem>
+                <MenuItem>Guiseppe</MenuItem>
+                <MenuItem>Gucci</MenuItem>
+                <MenuItem>Jimmy Choo</MenuItem>
+                <MenuItem>Manolo Blahnik</MenuItem>
+                <MenuItem>Prada</MenuItem>
+                <MenuItem>Saint Laurent</MenuItem>
+                <MenuItem>Salvatore</MenuItem>
+                <MenuItem>Tod's</MenuItem>
+              </div>
+            </MenuList>
+          </Menu>
+          <Menu isOpen_1={isOpen_1}>
+            <MenuButton
+              variant="ghost"
+              mx={1}
+              py={[1, 2, 2]}
+              px={4}
+              borderRadius={5}
+              _hover={{ bg: "white" }}
+              aria-label="Courses"
+              fontWeight="normal"
+              fontSize="12px"
+              lineHeight="15px"
+              textAlign="center"
+              letterSpacing="2px"
+              fontFamily="futura,sans-serif"
+              onMouseEnter={onOpen_1}
+              onMouseLeave={onClose_1}
+            >
+              {" "}
+              KIds{" "}
+            </MenuButton>
+            <MenuList
+              onMouseEnter={onOpen_1}
+              onMouseLeave={onClose_1}
+              display="flex"
+              gap="30px"
+              align="center"
+            >
+              <div align="center">
+                <h4
+                  fontSize="13px"
+                  lineHeight="20.8px"
+                  textAlign="center"
+                  letterSpacing="2.6px"
+                >
+                  KID'S FASHION
+                </h4>
+                <MenuItem>Shop All</MenuItem>
+                <MenuItem>Boots</MenuItem>
+                <MenuItem>Espadrilles</MenuItem>
+                <MenuItem>Flats</MenuItem>
+                <MenuItem>Mules & Slides</MenuItem>
+                <MenuItem>Oxfords & Loafers</MenuItem>
+                <MenuItem>Pumps & Heels</MenuItem>
+                <MenuItem>Sandals</MenuItem>
+                <MenuItem>Slippers</MenuItem>
+                <MenuItem>Sneakers</MenuItem>
+                <MenuItem>Wedges</MenuItem>
+              </div>
+              <div align="center">
+                <h4
+                  fontSize="13px"
+                  lineHeight="20.8px"
+                  textAlign="center"
+                  letterSpacing="2.6px"
+                >
+                  KID'S DESIGNERS SHOES
+                </h4>
+                <MenuItem>Burberry</MenuItem>
+                <MenuItem>Chloe</MenuItem>
+                <MenuItem>Christian Louboutin</MenuItem>
+                <MenuItem>Dolce & Gabbana</MenuItem>
+                <MenuItem>Guiseppe</MenuItem>
+                <MenuItem>Gucci</MenuItem>
+                <MenuItem>Jimmy Choo</MenuItem>
+                <MenuItem>Manolo Blahnik</MenuItem>
+                <MenuItem>Prada</MenuItem>
+                <MenuItem>Saint Laurent</MenuItem>
+                <MenuItem>Salvatore</MenuItem>
+                <MenuItem>Tod's</MenuItem>
+              </div>
+              <div align="center">
+                <h4
+                  fontSize="13px"
+                  lineHeight="20.8px"
+                  textAlign="center"
+                  letterSpacing="2.6px"
+                >
+                  KID'S BAGS
+                </h4>
+                <MenuItem>Shop All</MenuItem>
+                <MenuItem>Boots</MenuItem>
+                <MenuItem>Espadrilles</MenuItem>
+                <MenuItem>Flats</MenuItem>
+                <MenuItem>Mules & Slides</MenuItem>
+                <MenuItem>Oxfords & Loafers</MenuItem>
+                <MenuItem>Pumps & Heels</MenuItem>
+                <MenuItem>Sandals</MenuItem>
+                <MenuItem>Slippers</MenuItem>
+                <MenuItem>Sneakers</MenuItem>
+                <MenuItem>Wedges</MenuItem>
+              </div>
+              <div align="center">
+                <h4
+                  fontSize="13px"
+                  lineHeight="20.8px"
+                  textAlign="center"
+                  letterSpacing="2.6px"
+                >
+                  KID'S ACCESSORIES
+                </h4>
+                <MenuItem>Burberry</MenuItem>
+                <MenuItem>Chloe</MenuItem>
+                <MenuItem>Christian Louboutin</MenuItem>
+                <MenuItem>Dolce & Gabbana</MenuItem>
+                <MenuItem>Guiseppe</MenuItem>
+                <MenuItem>Gucci</MenuItem>
+                <MenuItem>Jimmy Choo</MenuItem>
+                <MenuItem>Manolo Blahnik</MenuItem>
+                <MenuItem>Prada</MenuItem>
+                <MenuItem>Saint Laurent</MenuItem>
+                <MenuItem>Salvatore</MenuItem>
+                <MenuItem>Tod's</MenuItem>
+              </div>
+            </MenuList>
+          </Menu>
+          <Menu isOpen2={isOpen2}>
+            <MenuButton
+              variant="ghost"
+              mx={1}
+              py={[1, 2]}
+              px={3}
+              borderRadius={5}
+              _hover={{ bg: "white" }}
+              aria-label="Courses"
+              fontWeight="normal"
+              fontSize="12px"
+              lineHeight="15px"
+              textAlign="center"
+              letterSpacing="2px"
+              fontFamily="futura,sans-serif"
+              onMouseEnter={onOpen2}
+              onMouseLeave={onClose2}
+            >
+              Shoes
+            </MenuButton>
+            <MenuList
+              onMouseEnter={onOpen2}
+              onMouseLeave={onClose2}
+              display="flex"
+              gap="30px"
+              align="center"
+            >
+              <div align="center">
+                <h4
+                  fontSize="13px"
+                  lineHeight="20.8px"
+                  textAlign="center"
+                  letterSpacing="2.6px"
+                >
+                  WOMEN'S SHOES
+                </h4>
+                <MenuItem>Shop All</MenuItem>
+                <MenuItem>Boots</MenuItem>
+                <MenuItem>Espadrilles</MenuItem>
+                <MenuItem>Flats</MenuItem>
+                <MenuItem>Mules & Slides</MenuItem>
+                <MenuItem>Oxfords & Loafers</MenuItem>
+                <MenuItem>Pumps & Heels</MenuItem>
+                <MenuItem>Sandals</MenuItem>
+                <MenuItem>Slippers</MenuItem>
+                <MenuItem>Sneakers</MenuItem>
+                <MenuItem>Wedges</MenuItem>
+              </div>
+              <div align="center">
+                <h4
+                  fontSize="13px"
+                  lineHeight="20.8px"
+                  textAlign="center"
+                  letterSpacing="2.6px"
+                >
+                  WOMEN'S DRESSES
                 </h4>
                 <MenuItem>Burberry</MenuItem>
                 <MenuItem>Chloe</MenuItem>
@@ -294,7 +557,7 @@ export const Navbar = () => {
                   textAlign="center"
                   letterSpacing="2.6px"
                 >
-                  MEN'S DESIGNERS
+                 MEN'S DESIGNERS
                 </h4>
                 <MenuItem>Burberry</MenuItem>
                 <MenuItem>Chloe</MenuItem>
@@ -311,12 +574,12 @@ export const Navbar = () => {
               </div>
             </MenuList>
           </Menu>
-          <Menu isOpen_1={isOpen_1}>
+          <Menu isOpen2={isOpen2}>
             <MenuButton
               variant="ghost"
               mx={1}
-              py={[1, 2, 2]}
-              px={4}
+              py={[1, 2]}
+              px={3}
               borderRadius={5}
               _hover={{ bg: "white" }}
               aria-label="Courses"
@@ -324,17 +587,16 @@ export const Navbar = () => {
               fontSize="12px"
               lineHeight="15px"
               textAlign="center"
-              letterSpacing="2.6px"
+              letterSpacing="2px"
               fontFamily="futura,sans-serif"
-              onMouseEnter={onOpen_1}
-              onMouseLeave={onClose_1}
+              onMouseEnter={onOpen2}
+              onMouseLeave={onClose2}
             >
-              {" "}
-              HANDBAGS & ACCESSORIES
+              Bags
             </MenuButton>
             <MenuList
-              onMouseEnter={onOpen_1}
-              onMouseLeave={onClose_1}
+              onMouseEnter={onOpen2}
+              onMouseLeave={onClose2}
               display="flex"
               gap="30px"
               align="center"
@@ -346,7 +608,7 @@ export const Navbar = () => {
                   textAlign="center"
                   letterSpacing="2.6px"
                 >
-                  WOMEN'S HANDBAGS
+                  WOMEN'S HANDBAG'S
                 </h4>
                 <MenuItem>Shop All</MenuItem>
                 <MenuItem>Boots</MenuItem>
@@ -367,7 +629,7 @@ export const Navbar = () => {
                   textAlign="center"
                   letterSpacing="2.6px"
                 >
-                  WOMEN'S DESIGNERS HANDBAGS
+                  WOMEN'S DESIGNERS BAGS
                 </h4>
                 <MenuItem>Burberry</MenuItem>
                 <MenuItem>Chloe</MenuItem>
@@ -410,686 +672,7 @@ export const Navbar = () => {
                   textAlign="center"
                   letterSpacing="2.6px"
                 >
-                  MEN'S ACCESSORIES
-                </h4>
-                <MenuItem>Burberry</MenuItem>
-                <MenuItem>Chloe</MenuItem>
-                <MenuItem>Christian Louboutin</MenuItem>
-                <MenuItem>Dolce & Gabbana</MenuItem>
-                <MenuItem>Guiseppe</MenuItem>
-                <MenuItem>Gucci</MenuItem>
-                <MenuItem>Jimmy Choo</MenuItem>
-                <MenuItem>Manolo Blahnik</MenuItem>
-                <MenuItem>Prada</MenuItem>
-                <MenuItem>Saint Laurent</MenuItem>
-                <MenuItem>Salvatore</MenuItem>
-                <MenuItem>Tod's</MenuItem>
-              </div>
-            </MenuList>
-          </Menu>
-          <Menu isOpen2={isOpen2}>
-            <MenuButton
-              variant="ghost"
-              mx={1}
-              py={[1, 2, 2]}
-              px={4}
-              borderRadius={5}
-              _hover={{ bg: "white" }}
-              aria-label="Courses"
-              fontWeight="normal"
-              fontSize="12px"
-              lineHeight="15px"
-              textAlign="center"
-              letterSpacing="2.6px"
-              fontFamily="futura,sans-serif"
-              onMouseEnter={onOpen2}
-              onMouseLeave={onClose2}
-            >
-              DESIGNERS
-            </MenuButton>
-            <MenuList
-              onMouseEnter={onOpen2}
-              onMouseLeave={onClose2}
-              display="flex"
-              gap="30px"
-              align="center"
-            >
-              <div align="center">
-                <h4
-                  fontSize="13px"
-                  lineHeight="20.8px"
-                  textAlign="center"
-                  letterSpacing="2.6px"
-                >
-                  WOMEN'S DESIGNERS
-                </h4>
-                <MenuItem>Shop All</MenuItem>
-                <MenuItem>Boots</MenuItem>
-                <MenuItem>Espadrilles</MenuItem>
-                <MenuItem>Flats</MenuItem>
-                <MenuItem>Mules & Slides</MenuItem>
-                <MenuItem>Oxfords & Loafers</MenuItem>
-                <MenuItem>Pumps & Heels</MenuItem>
-                <MenuItem>Sandals</MenuItem>
-                <MenuItem>Slippers</MenuItem>
-                <MenuItem>Sneakers</MenuItem>
-                <MenuItem>Wedges</MenuItem>
-              </div>
-              <div align="center">
-                <h4
-                  fontSize="13px"
-                  lineHeight="20.8px"
-                  textAlign="center"
-                  letterSpacing="2.6px"
-                >
-                  WOMEN'S DESIGNERS
-                </h4>
-                <MenuItem>Burberry</MenuItem>
-                <MenuItem>Chloe</MenuItem>
-                <MenuItem>Christian Louboutin</MenuItem>
-                <MenuItem>Dolce & Gabbana</MenuItem>
-                <MenuItem>Guiseppe</MenuItem>
-                <MenuItem>Gucci</MenuItem>
-                <MenuItem>Jimmy Choo</MenuItem>
-                <MenuItem>Manolo Blahnik</MenuItem>
-                <MenuItem>Prada</MenuItem>
-                <MenuItem>Saint Laurent</MenuItem>
-                <MenuItem>Salvatore</MenuItem>
-                <MenuItem>Tod's</MenuItem>
-              </div>
-              <div align="center">
-                <h4
-                  fontSize="13px"
-                  lineHeight="20.8px"
-                  textAlign="center"
-                  letterSpacing="2.6px"
-                >
-                  MEN'S DESIGNERS
-                </h4>
-                <MenuItem>Shop All</MenuItem>
-                <MenuItem>Boots</MenuItem>
-                <MenuItem>Espadrilles</MenuItem>
-                <MenuItem>Flats</MenuItem>
-                <MenuItem>Mules & Slides</MenuItem>
-                <MenuItem>Oxfords & Loafers</MenuItem>
-                <MenuItem>Pumps & Heels</MenuItem>
-                <MenuItem>Sandals</MenuItem>
-                <MenuItem>Slippers</MenuItem>
-                <MenuItem>Sneakers</MenuItem>
-                <MenuItem>Wedges</MenuItem>
-              </div>
-              <div align="center">
-                <h4
-                  fontSize="13px"
-                  lineHeight="20.8px"
-                  textAlign="center"
-                  letterSpacing="2.6px"
-                >
-                  DESIGNERS
-                </h4>
-                <MenuItem>Burberry</MenuItem>
-                <MenuItem>Chloe</MenuItem>
-                <MenuItem>Christian Louboutin</MenuItem>
-                <MenuItem>Dolce & Gabbana</MenuItem>
-                <MenuItem>Guiseppe</MenuItem>
-                <MenuItem>Gucci</MenuItem>
-                <MenuItem>Jimmy Choo</MenuItem>
-                <MenuItem>Manolo Blahnik</MenuItem>
-                <MenuItem>Prada</MenuItem>
-                <MenuItem>Saint Laurent</MenuItem>
-                <MenuItem>Salvatore</MenuItem>
-                <MenuItem>Tod's</MenuItem>
-              </div>
-            </MenuList>
-          </Menu>
-          <Menu isOpen3={isOpen3}>
-            <MenuButton
-              variant="ghost"
-              mx={1}
-              py={[1, 2, 2]}
-              px={4}
-              borderRadius={5}
-              _hover={{ bg: "white" }}
-              aria-label="Courses"
-              fontWeight="normal"
-              fontSize="12px"
-              lineHeight="15px"
-              textAlign="center"
-              letterSpacing="2.6px"
-              fontFamily="futura,sans-serif"
-              onMouseEnter={onOpen3}
-              onMouseLeave={onClose3}
-            >
-              WOMEN
-            </MenuButton>
-            <MenuList
-              onMouseEnter={onOpen3}
-              onMouseLeave={onClose3}
-              display="flex"
-              gap="30px"
-              align="center"
-            >
-              <div align="center">
-                <h4
-                  fontSize="13px"
-                  lineHeight="20.8px"
-                  textAlign="center"
-                  letterSpacing="2.6px"
-                >
-                  WOMEN'S SHOES
-                </h4>
-                <MenuItem>Shop All</MenuItem>
-                <MenuItem>Boots</MenuItem>
-                <MenuItem>Espadrilles</MenuItem>
-                <MenuItem>Flats</MenuItem>
-                <MenuItem>Mules & Slides</MenuItem>
-                <MenuItem>Oxfords & Loafers</MenuItem>
-                <MenuItem>Pumps & Heels</MenuItem>
-                <MenuItem>Sandals</MenuItem>
-                <MenuItem>Slippers</MenuItem>
-                <MenuItem>Sneakers</MenuItem>
-                <MenuItem>Wedges</MenuItem>
-              </div>
-              <div align="center">
-                <h4
-                  fontSize="13px"
-                  lineHeight="20.8px"
-                  textAlign="center"
-                  letterSpacing="2.6px"
-                >
-                  WOMEN'S DESIGNERS
-                </h4>
-                <MenuItem>Burberry</MenuItem>
-                <MenuItem>Chloe</MenuItem>
-                <MenuItem>Christian Louboutin</MenuItem>
-                <MenuItem>Dolce & Gabbana</MenuItem>
-                <MenuItem>Guiseppe</MenuItem>
-                <MenuItem>Gucci</MenuItem>
-                <MenuItem>Jimmy Choo</MenuItem>
-                <MenuItem>Manolo Blahnik</MenuItem>
-                <MenuItem>Prada</MenuItem>
-                <MenuItem>Saint Laurent</MenuItem>
-                <MenuItem>Salvatore</MenuItem>
-                <MenuItem>Tod's</MenuItem>
-              </div>
-              <div align="center">
-                <h4
-                  fontSize="13px"
-                  lineHeight="20.8px"
-                  textAlign="center"
-                  letterSpacing="2.6px"
-                >
-                  WOMEN'S SHOES
-                </h4>
-                <MenuItem>Shop All</MenuItem>
-                <MenuItem>Boots</MenuItem>
-                <MenuItem>Espadrilles</MenuItem>
-                <MenuItem>Flats</MenuItem>
-                <MenuItem>Mules & Slides</MenuItem>
-                <MenuItem>Oxfords & Loafers</MenuItem>
-                <MenuItem>Pumps & Heels</MenuItem>
-                <MenuItem>Sandals</MenuItem>
-                <MenuItem>Slippers</MenuItem>
-                <MenuItem>Sneakers</MenuItem>
-                <MenuItem>Wedges</MenuItem>
-              </div>
-              <div align="center">
-                <h4
-                  fontSize="13px"
-                  lineHeight="20.8px"
-                  textAlign="center"
-                  letterSpacing="2.6px"
-                >
-                  WOMEN'S DESIGNERS
-                </h4>
-                <MenuItem>Burberry</MenuItem>
-                <MenuItem>Chloe</MenuItem>
-                <MenuItem>Christian Louboutin</MenuItem>
-                <MenuItem>Dolce & Gabbana</MenuItem>
-                <MenuItem>Guiseppe</MenuItem>
-                <MenuItem>Gucci</MenuItem>
-                <MenuItem>Jimmy Choo</MenuItem>
-                <MenuItem>Manolo Blahnik</MenuItem>
-                <MenuItem>Prada</MenuItem>
-                <MenuItem>Saint Laurent</MenuItem>
-                <MenuItem>Salvatore</MenuItem>
-                <MenuItem>Tod's</MenuItem>
-              </div>
-            </MenuList>
-          </Menu>
-          <Menu isOpen4={isOpen4}>
-            <MenuButton
-              variant="ghost"
-              mx={1}
-              py={[1, 2, 2]}
-              px={4}
-              borderRadius={5}
-              _hover={{ bg: "white" }}
-              aria-label="Courses"
-              fontWeight="normal"
-              fontSize="12px"
-              lineHeight="15px"
-              textAlign="center"
-              letterSpacing="2.6px"
-              fontFamily="futura,sans-serif"
-              onMouseEnter={onOpen4}
-              onMouseLeave={onClose4}
-            >
-              MEN
-            </MenuButton>
-            <MenuList
-              onMouseEnter={onOpen4}
-              onMouseLeave={onClose4}
-              display="flex"
-              gap="30px"
-              align="center"
-            >
-              <div align="center">
-                <h4
-                  fontSize="13px"
-                  lineHeight="20.8px"
-                  textAlign="center"
-                  letterSpacing="2.6px"
-                >
-                  MEN'S SHOES
-                </h4>
-                <MenuItem>Shop All</MenuItem>
-                <MenuItem>Boots</MenuItem>
-                <MenuItem>Espadrilles</MenuItem>
-                <MenuItem>Flats</MenuItem>
-                <MenuItem>Mules & Slides</MenuItem>
-                <MenuItem>Oxfords & Loafers</MenuItem>
-                <MenuItem>Pumps & Heels</MenuItem>
-                <MenuItem>Sandals</MenuItem>
-                <MenuItem>Slippers</MenuItem>
-                <MenuItem>Sneakers</MenuItem>
-                <MenuItem>Wedges</MenuItem>
-              </div>
-              <div align="center">
-                <h4
-                  fontSize="13px"
-                  lineHeight="20.8px"
-                  textAlign="center"
-                  letterSpacing="2.6px"
-                >
-                  MEN'S DESIGNERS
-                </h4>
-                <MenuItem>Burberry</MenuItem>
-                <MenuItem>Chloe</MenuItem>
-                <MenuItem>Christian Louboutin</MenuItem>
-                <MenuItem>Dolce & Gabbana</MenuItem>
-                <MenuItem>Guiseppe</MenuItem>
-                <MenuItem>Gucci</MenuItem>
-                <MenuItem>Jimmy Choo</MenuItem>
-                <MenuItem>Manolo Blahnik</MenuItem>
-                <MenuItem>Prada</MenuItem>
-                <MenuItem>Saint Laurent</MenuItem>
-                <MenuItem>Salvatore</MenuItem>
-                <MenuItem>Tod's</MenuItem>
-              </div>
-              <div align="center">
-                <h4
-                  fontSize="13px"
-                  lineHeight="20.8px"
-                  textAlign="center"
-                  letterSpacing="2.6px"
-                >
-                  MEN'S SHOES
-                </h4>
-                <MenuItem>Shop All</MenuItem>
-                <MenuItem>Boots</MenuItem>
-                <MenuItem>Espadrilles</MenuItem>
-                <MenuItem>Flats</MenuItem>
-                <MenuItem>Mules & Slides</MenuItem>
-                <MenuItem>Oxfords & Loafers</MenuItem>
-                <MenuItem>Pumps & Heels</MenuItem>
-                <MenuItem>Sandals</MenuItem>
-                <MenuItem>Slippers</MenuItem>
-                <MenuItem>Sneakers</MenuItem>
-                <MenuItem>Wedges</MenuItem>
-              </div>
-              <div align="center">
-                <h4
-                  fontSize="13px"
-                  lineHeight="20.8px"
-                  textAlign="center"
-                  letterSpacing="2.6px"
-                >
-                  MEN'S DESIGNERS
-                </h4>
-                <MenuItem>Burberry</MenuItem>
-                <MenuItem>Chloe</MenuItem>
-                <MenuItem>Christian Louboutin</MenuItem>
-                <MenuItem>Dolce & Gabbana</MenuItem>
-                <MenuItem>Guiseppe</MenuItem>
-                <MenuItem>Gucci</MenuItem>
-                <MenuItem>Jimmy Choo</MenuItem>
-                <MenuItem>Manolo Blahnik</MenuItem>
-                <MenuItem>Prada</MenuItem>
-                <MenuItem>Saint Laurent</MenuItem>
-                <MenuItem>Salvatore</MenuItem>
-                <MenuItem>Tod's</MenuItem>
-              </div>
-            </MenuList>
-          </Menu>
-          <Menu isOpen5={isOpen5}>
-            <MenuButton
-              variant="ghost"
-              mx={1}
-              py={[1, 2, 2]}
-              px={4}
-              borderRadius={5}
-              _hover={{ bg: "white" }}
-              aria-label="Courses"
-              fontWeight="normal"
-              fontSize="12px"
-              lineHeight="15px"
-              textAlign="center"
-              letterSpacing="2.6px"
-              fontFamily="futura,sans-serif"
-              onMouseEnter={onOpen5}
-              onMouseLeave={onClose5}
-            >
-              SUNGLASSES
-            </MenuButton>
-            <MenuList
-              onMouseEnter={onOpen5}
-              onMouseLeave={onClose5}
-              display="flex"
-              gap="30px"
-              align="center"
-            >
-              <div align="center">
-                <h4
-                  fontSize="13px"
-                  lineHeight="20.8px"
-                  textAlign="center"
-                  letterSpacing="2.6px"
-                >
-                  WOMEN'S SUNGLASSES
-                </h4>
-                <MenuItem>Shop All</MenuItem>
-                <MenuItem>Boots</MenuItem>
-                <MenuItem>Espadrilles</MenuItem>
-                <MenuItem>Flats</MenuItem>
-                <MenuItem>Mules & Slides</MenuItem>
-                <MenuItem>Oxfords & Loafers</MenuItem>
-                <MenuItem>Pumps & Heels</MenuItem>
-                <MenuItem>Sandals</MenuItem>
-                <MenuItem>Slippers</MenuItem>
-                <MenuItem>Sneakers</MenuItem>
-                <MenuItem>Wedges</MenuItem>
-              </div>
-              <div align="center">
-                <h4
-                  fontSize="13px"
-                  lineHeight="20.8px"
-                  textAlign="center"
-                  letterSpacing="2.6px"
-                >
-                  MEN'S SUNGLASSES
-                </h4>
-                <MenuItem>Burberry</MenuItem>
-                <MenuItem>Chloe</MenuItem>
-                <MenuItem>Christian Louboutin</MenuItem>
-                <MenuItem>Dolce & Gabbana</MenuItem>
-                <MenuItem>Guiseppe</MenuItem>
-                <MenuItem>Gucci</MenuItem>
-                <MenuItem>Jimmy Choo</MenuItem>
-                <MenuItem>Manolo Blahnik</MenuItem>
-                <MenuItem>Prada</MenuItem>
-                <MenuItem>Saint Laurent</MenuItem>
-                <MenuItem>Salvatore</MenuItem>
-                <MenuItem>Tod's</MenuItem>
-              </div>
-            </MenuList>
-          </Menu>
-          {/* <Menu isOpen6={isOpen6}>
-            <MenuButton
-              variant="ghost"
-              mx={1}
-              py={[1, 2, 2]}
-              px={4}
-              borderRadius={5}
-              _hover={{ bg: "white" }}
-              aria-label="Courses"
-              fontWeight="normal"
-              fontSize="12px"
-              lineHeight="15px"
-              textAlign="center"
-              letterSpacing="2.6px"
-              fontFamily="futura,sans-serif"
-              onMouseEnter={onOpen6}
-              onMouseLeave={onClose6}
-            >
-              JEWELERY & WATCHES
-            </MenuButton>
-            <MenuList
-              onMouseEnter={onOpen6}
-              onMouseLeave={onClose6}
-              display="flex"
-              gap="30px"
-              align="center"
-            >
-              <div align="center">
-                <h4
-                  fontSize="13px"
-                  lineHeight="20.8px"
-                  textAlign="center"
-                  letterSpacing="2.6px"
-                >
-                  WOMEN'S JEWELERY
-                </h4>
-                <Link to="/product">
-                 <MenuItem>Shop All</MenuItem>
-                </Link>
-
-                <MenuItem>Boots</MenuItem>
-                <MenuItem>Espadrilles</MenuItem>
-                <MenuItem>Flats</MenuItem>
-                <MenuItem>Mules & Slides</MenuItem>
-                <MenuItem>Oxfords & Loafers</MenuItem>
-                <MenuItem>Pumps & Heels</MenuItem>
-                <MenuItem>Sandals</MenuItem>
-                <MenuItem>Slippers</MenuItem>
-                <MenuItem>Sneakers</MenuItem>
-                <MenuItem>Wedges</MenuItem>
-              </div>
-              <div align="center">
-                <h4
-                  fontSize="13px"
-                  lineHeight="20.8px"
-                  textAlign="center"
-                  letterSpacing="2.6px"
-                >
-                  WOMEN'S WATCHES
-                </h4>
-                <MenuItem>Burberry</MenuItem>
-                <MenuItem>Chloe</MenuItem>
-                <MenuItem>Christian Louboutin</MenuItem>
-                <MenuItem>Dolce & Gabbana</MenuItem>
-                <MenuItem>Guiseppe</MenuItem>
-                <MenuItem>Gucci</MenuItem>
-                <MenuItem>Jimmy Choo</MenuItem>
-                <MenuItem>Manolo Blahnik</MenuItem>
-                <MenuItem>Prada</MenuItem>
-                <MenuItem>Saint Laurent</MenuItem>
-                <MenuItem>Salvatore</MenuItem>
-                <MenuItem>Tod's</MenuItem>
-              </div>
-              <div align="center">
-                <h4
-                  fontSize="13px"
-                  lineHeight="20.8px"
-                  textAlign="center"
-                  letterSpacing="2.6px"
-                >
-                  MEN'S JEWELERY
-                </h4>
-                <MenuItem>Shop All</MenuItem>
-                <MenuItem>Boots</MenuItem>
-                <MenuItem>Espadrilles</MenuItem>
-                <MenuItem>Flats</MenuItem>
-                <MenuItem>Mules & Slides</MenuItem>
-                <MenuItem>Oxfords & Loafers</MenuItem>
-                <MenuItem>Pumps & Heels</MenuItem>
-                <MenuItem>Sandals</MenuItem>
-                <MenuItem>Slippers</MenuItem>
-                <MenuItem>Sneakers</MenuItem>
-                <MenuItem>Wedges</MenuItem>
-              </div>
-              <div align="center">
-                <h4
-                  fontSize="13px"
-                  lineHeight="20.8px"
-                  textAlign="center"
-                  letterSpacing="2.6px"
-                >
-                  MEN'S WATCHES
-                </h4>
-                <MenuItem>Burberry</MenuItem>
-                <MenuItem>Chloe</MenuItem>
-                <MenuItem>Christian Louboutin</MenuItem>
-                <MenuItem>Dolce & Gabbana</MenuItem>
-                <MenuItem>Guiseppe</MenuItem>
-                <MenuItem>Gucci</MenuItem>
-                <MenuItem>Jimmy Choo</MenuItem>
-                <MenuItem>Manolo Blahnik</MenuItem>
-                <MenuItem>Prada</MenuItem>
-                <MenuItem>Saint Laurent</MenuItem>
-                <MenuItem>Salvatore</MenuItem>
-                <MenuItem>Tod's</MenuItem>
-              </div>
-            </MenuList>
-          </Menu> */}
-
-          <Menu isOpen7={isOpen7}>
-            <MenuButton
-              variant="ghost"
-              mx={1}
-              py={[1, 2, 2]}
-              px={4}
-              borderRadius={5}
-              _hover={{ bg: "white" }}
-              aria-label="Courses"
-              fontWeight="normal"
-              fontSize="12px"
-              lineHeight="15px"
-              textAlign="center"
-              letterSpacing="2.6px"
-              fontFamily="futura,sans-serif"
-              onMouseEnter={onOpen7}
-              onMouseLeave={onClose7}
-            >
-              UNDER $ 50
-            </MenuButton>
-            <MenuList
-              onMouseEnter={onOpen7}
-              onMouseLeave={onClose7}
-              display="flex"
-              gap="30px"
-              align="center"
-            >
-              <div align="center">
-                <h4
-                  fontSize="13px"
-                  lineHeight="20.8px"
-                  textAlign="center"
-                  letterSpacing="2.6px"
-                >
-                  WOMEN'S{" "}
-                </h4>
-                <MenuItem>Shop All</MenuItem>
-                <MenuItem>Boots</MenuItem>
-                <MenuItem>Espadrilles</MenuItem>
-                <MenuItem>Flats</MenuItem>
-                <MenuItem>Mules & Slides</MenuItem>
-                <MenuItem>Oxfords & Loafers</MenuItem>
-                <MenuItem>Pumps & Heels</MenuItem>
-                <MenuItem>Sandals</MenuItem>
-                <MenuItem>Slippers</MenuItem>
-                <MenuItem>Sneakers</MenuItem>
-                <MenuItem>Wedges</MenuItem>
-              </div>
-              <div align="center">
-                <h4
-                  fontSize="13px"
-                  lineHeight="20.8px"
-                  textAlign="center"
-                  letterSpacing="2.6px"
-                >
-                  MEN'S
-                </h4>
-                <MenuItem>Burberry</MenuItem>
-                <MenuItem>Chloe</MenuItem>
-                <MenuItem>Christian Louboutin</MenuItem>
-                <MenuItem>Dolce & Gabbana</MenuItem>
-                <MenuItem>Guiseppe</MenuItem>
-                <MenuItem>Gucci</MenuItem>
-                <MenuItem>Jimmy Choo</MenuItem>
-                <MenuItem>Manolo Blahnik</MenuItem>
-                <MenuItem>Prada</MenuItem>
-                <MenuItem>Saint Laurent</MenuItem>
-                <MenuItem>Salvatore</MenuItem>
-                <MenuItem>Tod's</MenuItem>
-              </div>
-            </MenuList>
-          </Menu>
-          <Menu isOpen8={isOpen8}>
-            <MenuButton
-              variant="ghost"
-              mx={1}
-              py={[1, 2, 2]}
-              px={4}
-              borderRadius={5}
-              _hover={{ bg: "white" }}
-              aria-label="Courses"
-              fontSize="12px"
-              lineHeight="15px"
-              textAlign="center"
-              letterSpacing="2.6px"
-              fontFamily="futura,sans-serif"
-              onMouseEnter={onOpen8}
-              onMouseLeave={onClose8}
-            >
-              BEAUTY
-            </MenuButton>
-            <MenuList
-              onMouseEnter={onOpen8}
-              onMouseLeave={onClose8}
-              display="flex"
-              gap="30px"
-              align="center"
-            >
-              <div align="center">
-                <h4
-                  fontSize="13px"
-                  lineHeight="20.8px"
-                  textAlign="center"
-                  letterSpacing="2.6px"
-                >
-                  WOMEN'S BEAUTY
-                </h4>
-                <MenuItem>Shop All</MenuItem>
-                <MenuItem>Boots</MenuItem>
-                <MenuItem>Espadrilles</MenuItem>
-                <MenuItem>Flats</MenuItem>
-                <MenuItem>Mules & Slides</MenuItem>
-                <MenuItem>Oxfords & Loafers</MenuItem>
-                <MenuItem>Pumps & Heels</MenuItem>
-                <MenuItem>Sandals</MenuItem>
-                <MenuItem>Slippers</MenuItem>
-                <MenuItem>Sneakers</MenuItem>
-                <MenuItem>Wedges</MenuItem>
-              </div>
-              <div align="center">
-                <h4
-                  fontSize="13px"
-                  lineHeight="20.8px"
-                  textAlign="center"
-                  letterSpacing="2.6px"
-                >
-                  MEN'S BEAUTY
+                  MEN'S DESIGNER BAGS
                 </h4>
                 <MenuItem>Burberry</MenuItem>
                 <MenuItem>Chloe</MenuItem>
@@ -1125,7 +708,7 @@ export const Navbar = () => {
               onMouseEnter={onOpen9}
               onMouseLeave={onClose9}
             >
-              CLEARANCE
+              Beauty
             </MenuButton>
             <MenuList
               onMouseEnter={onOpen9}
@@ -1168,6 +751,36 @@ export const Navbar = () => {
               </div>
             </MenuList>
           </Menu>
+          <InputGroup marginLeft={15} marginTop="20px">
+            <InputLeftElement
+              pointerEvents="none"
+              children={<AiOutlineSearch color="gray.300" cursor="pointer" />}
+            />
+            <Input
+              width={400}
+              type="tel"
+              placeholder="What are you looking for ?"
+            />
+          </InputGroup>
+          <Tooltip hasArrow label="login" placement="bottom">
+            <div
+              style={{
+                display: "flex",
+                alignItem: "center",
+                justifyContent: "center",
+                margin: "27px 27px",
+              }}
+            >
+              <Link to="/login" style={{ marginRight: "20px" }}>
+                <BsPerson fontSize="25px" />
+              </Link>
+              <Tooltip hasArrow label="cart" placement="top" closeDelay={100}>
+                <Link to="/cart">
+                  <BsBag fontSize="25px" align="center" />
+                </Link>
+              </Tooltip>
+            </div>
+          </Tooltip>
         </Flex>
       </Box>
     </Box>

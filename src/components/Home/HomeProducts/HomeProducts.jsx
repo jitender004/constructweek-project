@@ -4,10 +4,11 @@ import { popularProducts } from "../../../data";
 import Product from "./HomeProduct";
 
 const Container = styled.div`
-  padding: 20px;
+  padding: 10px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  // border:"1px solid red"
 `;
 
 const HomeProducts = () => {
@@ -15,7 +16,8 @@ const HomeProducts = () => {
     <>
       <h2
         style={{
-          textAlign: "center",
+          // textAlign: "center",
+          marginLeft:"30px",
           fontSize: "30px",
           fontFamily: "Tiemann,serif",
           marginTop: "30px",

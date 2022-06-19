@@ -1,36 +1,30 @@
 export const sliderItems = [
   {
     id: 1,
-    img: "https://cdn.shopify.com/s/files/1/0248/3473/6191/files/Prada_1400x.jpg?v=1630505683",
-    title: "SUMMER SALE",
-    desc: "DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS.",
-    bg: "f5fafd",
+    img: "https://www.linkpicture.com/q/1_330.jpg",
+  
   },
   {
     id: 2,
-    img: "https://cdn.shopify.com/s/files/1/0248/3473/6191/files/gucci_1400x.jpg?v=1630503443",
-    title: "AUTUMN COLLECTION",
-    desc: "DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS.",
-    bg: "fcf1ed",
+    img: "https://www.linkpicture.com/q/2_973.jpg",
+    
   },
   {
     id: 3,
-    img: "https://cdn.shopify.com/s/files/1/0248/3473/6191/files/Valentino_1400x.jpg?v=1630420054",
-    title: "LOUNGEWEAR LOVE",
-    desc: "DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS.",
-    bg: "fbf0f4",
+    img: "https://www.linkpicture.com/q/3_724.jpg",
+   
   },
   {
     id: 4,
 
-    title: "LOUNGEWEAR LOVE",
-    img: "https://cdn.shopify.com/s/files/1/0248/3473/6191/files/Bottega_Veneta_1400x.jpg?v=1615206215",
+    
+    img: "https://www.linkpicture.com/q/5_517.jpg",
     desc: "DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS.",
     bg: "fbf0f4",
   },
   {
     id: 5,
-    img: "https://cdn.shopify.com/s/files/1/0248/3473/6191/files/fENDI_1400x.jpg?v=1630506238",
+    img: "https://www.linkpicture.com/q/4_643.jpg",
     title: "LOUNGEWEAR LOVE",
     desc: "DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS.",
     bg: "fbf0f4",
@@ -61,60 +55,102 @@ export const categories = [
 export const popularProducts = [
   {
     id: 1,
-    img: "https://www.burdastyle.com/pub/media/catalog/product/cache/7bd3727382ce0a860b68816435d76e26/107/BUS-PAT-BURTE-1320516/1170x1470_BS_2016_05_132_front.png",
-    title: " Dresses"
+    img: "https://lmsin.net/cdn-cgi/image/w=288,q=60,fit=cover/https://70415bb9924dca896de0-34a37044c62e41b40b39fcedad8af927.lmsin.net/LS-Fest/LS-new/PC-1-Desktop-Men-17May2022.jpg",
+    title: " T-Shirts"
   },
   {
     id: 2,
-    img: "https://cdn.shopify.com/s/files/1/0248/3473/6191/products/1313278220_RLLZ_1_400x.jpg?v=1650790947",
-    title: " Pumps & heels"
+    img: "https://lmsin.net/cdn-cgi/image/w=288,q=60,fit=cover/https://70415bb9924dca896de0-34a37044c62e41b40b39fcedad8af927.lmsin.net/LS-Fest/LS-new/PC-2-Desktop-Men-17May2022.jpg",
+    title: " Casual Shirts"
   },
   {
     id: 3,
-    img: "https://cdn.shopify.com/s/files/1/0248/3473/6191/products/1160242638_RLLZ_1_180x.jpg?v=1651786583%20180w%20225h",
-    title: " Handbags"
+    img: "https://lmsin.net/cdn-cgi/image/w=288,q=60,fit=cover/https://70415bb9924dca896de0-34a37044c62e41b40b39fcedad8af927.lmsin.net/LS-Fest/LS-new/PC-3-Desktop-Men-17May2022.jpg",
+    title: " Trackpants"
   },
   {
     id: 4,
-    img: "https://cdn.shopify.com/s/files/1/0248/3473/6191/products/1313202046_RLLZ_1_180x.jpg?v=1651598055%20180w%20225h",
-    title: " Women's snicker"
+    img: "https://lmsin.net/cdn-cgi/image/w=288,q=60,fit=cover/https://70415bb9924dca896de0-34a37044c62e41b40b39fcedad8af927.lmsin.net/LS-Fest/LS-new/PC-4-Desktop-Men-17May2022.jpg",
+    title: " Jeans"
   },
 
   {
     id: 5,
-    img: "https://cdn.shopify.com/s/files/1/0248/3473/6191/products/1881082_180x.jpg?v=1634581037%20180w%20180h",
-    title: " Men's tshirt"
+    img: "https://lmsin.net/cdn-cgi/image/w=288,q=60,fit=cover/https://70415bb9924dca896de0-34a37044c62e41b40b39fcedad8af927.lmsin.net/LS-Fest/LS-new/PC-5-Desktop-Men-17May2022.jpg",
+    title: "Watches"
   },
 
   {
     id: 6,
-    img: "https://cdn.shopify.com/s/files/1/0248/3473/6191/products/1312134872_RLLZ_1_180x.jpg?v=1651561993%20180w%20225h",
-    title: " Men's snickers"
+    img: "https://lmsin.net/cdn-cgi/image/w=288,q=60,fit=cover/https://70415bb9924dca896de0-34a37044c62e41b40b39fcedad8af927.lmsin.net/LS-Fest/LS-new/PC-6-Desktop-Men-17May2022.jpg",
+    title: " Shorts"
   },
 
   {
     id: 7,
-    img: "https://cdn.shopify.com/s/files/1/0248/3473/6191/products/1411376764_RLLZ_1_c0c336d5-188c-42b1-89de-c830020a8bdc_180x.jpg?v=1651917535%20180w%20225h",
-    title: " Women's Top"
+    img: "https://lmsin.net/cdn-cgi/image/w=288,q=60,fit=cover/https://70415bb9924dca896de0-34a37044c62e41b40b39fcedad8af927.lmsin.net/LS-Fest/LS-new/PC-7-Desktop-Men-17May2022.jpg",
+    title: " Shoes"
   },
 
   {
     id: 8,
-    img: "https://cdn.shopify.com/s/files/1/0248/3473/6191/products/1ctbracelet123_180x.jpg?v=1651734996%20180w%20180h",
-    title: " jewellery"
-  },
-
-  {
-    id: 9,
-    img: "https://cdn.shopify.com/s/files/1/0248/3473/6191/products/C8I6fJg8B2EulkoTSS9S8EbD1IsdXTM1-25_180x.jpg?v=1651300585%20180w%20180h",
-    title: "Women's Denim"
-  },
-  {
-    id: 10,
-    img: "https://cdn.shopify.com/s/files/1/0248/3473/6191/products/2227080_180x.jpg?v=1648737046%20180w%20270h",
-    title: "Women's dresses"
+    img: "https://lmsin.net/cdn-cgi/image/w=288,q=60,fit=cover/https://70415bb9924dca896de0-34a37044c62e41b40b39fcedad8af927.lmsin.net/LS-Fest/LS-new/PC-8-Desktop-Men-17May2022.jpg",
+    title: " Casual Trousers"
   }
 ];
+export const trendingProduct = [
+  {
+    id:1,
+    img:"https://lmsin.net/cdn-cgi/image/w=288,q=60,fit=cover/https://70415bb9924dca896de0-34a37044c62e41b40b39fcedad8af927.lmsin.net/LS-Fest/LS-new/PC1-Men-categorybanner1-17June2022A.jpg"
+  },
+  {
+    id:2,
+    img:"https://lmsin.net/cdn-cgi/image/w=288,q=60,fit=cover/https://70415bb9924dca896de0-34a37044c62e41b40b39fcedad8af927.lmsin.net/LS-Fest/LS-new/PC1-Men-categorybanner2-17June2022A.jpg"
+  },
+  {
+    id:3,
+    img:"https://lmsin.net/cdn-cgi/image/w=288,q=60,fit=cover/https://70415bb9924dca896de0-34a37044c62e41b40b39fcedad8af927.lmsin.net/LS-Fest/LS-new/PC1-Men-categorybanner3-17June2022A.jpg"
+  },
+  {
+    id:4,
+    img:"https://lmsin.net/cdn-cgi/image/w=288,q=60,fit=cover/https://70415bb9924dca896de0-34a37044c62e41b40b39fcedad8af927.lmsin.net/LS-Fest/LS-new/PC1-Men-categorybanner4-17June2022A.jpg"
+  },
+  {
+    id:10,
+    img:"https://lmsin.net/cdn-cgi/image/w=288,q=60,fit=cover/https://70415bb9924dca896de0-34a37044c62e41b40b39fcedad8af927.lmsin.net/LS-Fest/LS-new/PC1-Men-categorybanner5-17June2022A.jpg"
+  },
+  {
+    id:5,
+    img:"https://lmsin.net/cdn-cgi/image/w=288,q=60,fit=cover/https://70415bb9924dca896de0-34a37044c62e41b40b39fcedad8af927.lmsin.net/LS-Fest/LS-new/PC1-Men-categorybanner6-17June2022A.jpg"
+  },
+  {
+    id:6,
+    img:"https://lmsin.net/cdn-cgi/image/w=288,q=60,fit=cover/https://70415bb9924dca896de0-34a37044c62e41b40b39fcedad8af927.lmsin.net/LS-Fest/LS-new/PC1-Men-categorybanner7-17June2022A.jpg"
+  },
+  {
+    id:7,
+    img:"https://lmsin.net/cdn-cgi/image/w=288,q=60,fit=cover/https://70415bb9924dca896de0-34a37044c62e41b40b39fcedad8af927.lmsin.net/LS-Fest/LS-new/PC1-Men-categorybanner8-17June2022A.jpg"
+  },
+  
+  {
+    id:8,
+    img:"https://lmsin.net/cdn-cgi/image/w=288,q=60,fit=cover/https://70415bb9924dca896de0-34a37044c62e41b40b39fcedad8af927.lmsin.net/LS-Fest/LS-new/PC1-Men-categorybanner9-17June2022A.jpg"
+  },
+  {
+    id:9,
+    img:"https://lmsin.net/cdn-cgi/image/w=288,q=60,fit=cover/https://70415bb9924dca896de0-34a37044c62e41b40b39fcedad8af927.lmsin.net/LS-Fest/LS-new/PC1-Men-categorybanner10-17June2022A.jpg"
+  },
+  {
+    id:11,
+    img:"https://lmsin.net/cdn-cgi/image/w=288,q=60,fit=cover/https://70415bb9924dca896de0-34a37044c62e41b40b39fcedad8af927.lmsin.net/LS-Fest/LS-new/PC1-Men-categorybanner11-17June2022A.jpg"
+  },
+  {
+    id:12,
+    img:"https://lmsin.net/cdn-cgi/image/w=288,q=60,fit=cover/https://70415bb9924dca896de0-34a37044c62e41b40b39fcedad8af927.lmsin.net/LS-Fest/LS-new/PC1-Men-categorybanner12-17June2022A.jpg"
+  },
+  
+
+]
 export const NewArrivalproduct = [
   {
     id: 1,

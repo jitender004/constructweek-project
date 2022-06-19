@@ -21,6 +21,7 @@ import {
 import { useState, useEffect, useRef } from "react";
 // import {ChevronLeftIcon} from '@chakra-ui/icons';
 import axios from "axios";
+import "./PaymentSuccess.css"
 import { useParams, Link, useNavigate } from "react-router-dom";
 
 export const Cart = () => {
@@ -92,10 +93,10 @@ export const Cart = () => {
         <Box>
           <Link to="#">
             <Image
-              height="40px"
-              width="261px"
-              src="https://cdn.shopify.com/s/files/1/0248/3473/6191/files/BLUEFLY-LOGO-11-20.png?180653"
-              alt="BlueFly Logo"
+              height="100px"
+              width="300px"
+              src="https://www.linkpicture.com/q/logo1_35.png"
+              alt=" Logo"
             />
           </Link>
         </Box>
@@ -265,6 +266,7 @@ export const Cart = () => {
               borderRadius="8px"
               textAlign="center"
               onClick={handlePay}
+              marginBottom="20px"
             >
               Pay now
             </Box>

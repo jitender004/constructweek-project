@@ -42,7 +42,9 @@
     height: 200px;
     // border-radius: 50%;
     // background-color: white;
+    // box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     position: absolute;
+    // border:1px solid red;
   `;
   
   const Image = styled.img`
@@ -51,8 +53,9 @@
   `;
   const Title = styled.h1`
     color:rgba(0,0,0,0.8);
-    font-size:23px;
+    font-size:20px;
     margin-bottom: 20px;
+
     color:white;
     font-family:Tiemann,serif;
     text-transform:uppercase;

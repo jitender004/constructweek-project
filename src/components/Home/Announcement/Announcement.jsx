@@ -1,8 +1,9 @@
 import styled from "styled-components";
 
 const Container = styled.div`
-  height: 30px;
-  background-color: #000000;
+  // height: 30px;
+  padding:10px;
+  background-color:rgba(250,166,25);
   color: white;
   display: flex;
   align-items: center;
@@ -12,7 +13,7 @@ const Container = styled.div`
 `;
 
 const Announcement = () => {
-  return <Container>Super Deal! Free Shipping on Orders Over $50</Container>;
+  return <Container>DEAL OF THE DAY: Flat 50% off + Free Shipping + Extra 10% off, use code: SALE10</Container>;
 };
 
 export default Announcement;

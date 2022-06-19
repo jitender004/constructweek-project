@@ -51,7 +51,7 @@ const ControlledCarousel = () => {
     </Carousel.Caption>
   </Carousel.Item>
 </Carousel>
-<hr />
+<hr className='hr' />
     </div>
   )
 }
